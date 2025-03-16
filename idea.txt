@@ -1,0 +1,3 @@
+Steam Scraper for developers.
+Aplicatie web ce extrage informati relevante de pe steam precum cele mai populare jocuri, cele mai populare genuri de jocuri, pentru a ii ajuta pe developeri sa urmareasca trend-urile actuale.
+Vom folosi limbajele de programare  JavaScript, HTML, CSS, Python, SQL.
