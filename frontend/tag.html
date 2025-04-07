@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Games by Tag</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Tags</a>
+    <h1 id="tag-title">Games</h1>
+    
+    <div class="controls">
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search games...">
+      </div>
+      <div class="sort-container">
+        <select id="sort">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+          <option value="current-desc">Current Players (High-Low)</option>
+          <option value="current-asc">Current Players (Low-High)</option>
+          <option value="variation-desc">Growth (High-Low)</option>
+          <option value="variation-asc">Growth (Low-High)</option>
+        </select>
+      </div>
+    </div>
+
+    <table id="games-table">
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Current Month Avg</th>
+          <th>Previous Month Avg</th>
+          <th>Variation</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="tag.js"></script>
+</body>
+</html>

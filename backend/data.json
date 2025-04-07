@@ -1,0 +1,39 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "name": "Adventure Quest",
+      "tags": ["adventure", "rpg", "open-world"],
+      "current_month_avg": 12500,
+      "previous_month_avg": 12000
+    },
+    {
+      "id": 2,
+      "name": "Space Strategist",
+      "tags": ["strategy", "sci-fi", "multiplayer"],
+      "current_month_avg": 10500,
+      "previous_month_avg": 11000
+    },
+    {
+      "id": 3,
+      "name": "Puzzle Masters",
+      "tags": ["puzzle", "family", "casual"],
+      "current_month_avg": 9500,
+      "previous_month_avg": 9800
+    },
+	{
+      "id": 4,
+      "name": "Terraria",
+      "tags": ["puzzle", "family", "casual"],
+      "current_month_avg": 10750,
+      "previous_month_avg": 9800
+    },
+	{
+      "id": 5,
+      "name": "Dota 2",
+      "tags": ["puzzle", "family", "casual"],
+      "current_month_avg": 9500,
+      "previous_month_avg": 30000
+    }
+  ]
+}
