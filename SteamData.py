@@ -1,14 +1,14 @@
 import requests
 import json
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta,date
 
 def get_top_steam_games(limit=100):
     """Fetches top played games from Steam's API with Unicode support."""
     url = "https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/"
     try:
         response = requests.get(url)
-        response.encoding = 'utf-8'  # Ensure proper Unicode handling
+        response.encoding = 'utf-8'  
         if response.status_code == 200:
             return response.json()["response"]["ranks"][:limit]
         print(f"Steam API Error: HTTP {response.status_code}")
@@ -48,25 +48,22 @@ def get_steam_game_details(appid):
         "tags": ["N/A"] * 5
     }
 
-    # First try with English locale
     url_en = f"https://store.steampowered.com/api/appdetails?appids={appid}&l=english"
     data = fetch_details(url_en)
 
-    # If fail or no name, try fallback (no locale override)
+
     if not data or str(appid) not in data or "data" not in data[str(appid)]:
         return default_response
 
     details = data[str(appid)]["data"]
     name = details.get("name", "").strip()
 
-    # If name is still empty, retry without forcing English
     if not name:
         url_fallback = f"https://store.steampowered.com/api/appdetails?appids={appid}"
         fallback_data = fetch_details(url_fallback)
         if fallback_data and str(appid) in fallback_data and "data" in fallback_data[str(appid)]:
             name = fallback_data[str(appid)]["data"].get("name", f"AppID {appid}").strip()
 
-    # Extract and clean tags
     raw_tags = []
     if "genres" in details:
         raw_tags = [tag["description"].strip() for tag in details["genres"] if tag.get("description")]
@@ -91,22 +88,21 @@ def getData():
         details = get_steam_game_details(appid)
         avg_players = get_30_day_avg_players(appid)
         
-        # Ensure all fields are Unicode-safe
+
         safe_data = {
             "name":details["name"],
             "appid": appid,
-            "current_players": game.get("concurrent", 0),
             "30_day_avg_players": avg_players if isinstance(avg_players, int) else "N/A",
             "top_5_tags": [tag for tag in details["tags"]]
         }
         
         output_data.append(safe_data)
-        time.sleep(1.8)  # Conservative delay
+        time.sleep(0.1)  
         
-        # Print progress with Unicode support
+
         print(f"Processed: {safe_data['name']} | Tags: {', '.join(safe_data['top_5_tags'])}")
 
-    # Save with ensure_ascii=False for proper Unicode
+
     with open("steam_top_games_unicode.json", "w", encoding='utf-8') as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
     print("\nSuccess! Data saved to steam_top_games_unicode.json")
@@ -115,7 +111,6 @@ def getData():
 
 
 
-import json
 import csv
 
 with open("steam_top_games_unicode.json", "r", encoding="utf-8") as f:
@@ -132,3 +127,42 @@ with open("games.csv", "w", newline='', encoding='utf-8') as f:
         for tag in game["top_5_tags"]:
             if tag != "N/A":
                 writer.writerow([appid, name, avg, tag])
+
+
+import psycopg2
+
+
+
+conn = psycopg2.connect(
+    host="localhost",
+    port="5432",
+    dbname="Games",
+    user="postgres",
+    password="Aeopbpb!2"
+)
+cur = conn.cursor()
+
+today = date.today().replace(day=1) 
+
+
+for game in data:
+    appid = game["appid"]
+    name = game["name"]
+    avg_players = game["30_day_avg_players"]
+    tags = game["top_5_tags"]
+
+    for tag in tags:
+        if tag != "N/A":
+            cur.execute(
+                """
+                INSERT INTO steam_game_stats (appid, name, avg_players, tag, month_collected)
+                VALUES (%s, %s, %s, %s, %s, %s)
+                """,
+                (appid, name, avg_players if isinstance(avg_players, int) else None, tag, today)
+            )
+
+conn.commit()
+cur.close()
+conn.close()
+
+print(" Data inserted into PostgreSQL.")
