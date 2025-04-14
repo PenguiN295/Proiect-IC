@@ -1,0 +1,24 @@
+{
+  "name": "proiect-ic",
+  "version": "1.0.0",
+  "description": "Pressing a tag on the Site will present a new table with games relevent to that tag",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PenguiN295/Proiect-IC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PenguiN295/Proiect-IC/issues"
+  },
+  "homepage": "https://github.com/PenguiN295/Proiect-IC#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

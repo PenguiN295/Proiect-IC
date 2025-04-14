@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tag Popularity Predictor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+    <h1>Tag Popularity Predictor</h1>
+    
+    <div class="prediction-controls">
+      <div class="input-group">
+        <label for="tag-select">Select Tag:</label>
+        <select id="tag-select">
+          <option value="">Loading tags...</option>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label for="time-select">Time Frame:</label>
+        <select id="time-select">
+          <option value="1">1 month</option>
+          <option value="3">3 months</option>
+          <option value="6">6 months</option>
+          <option value="12">1 year</option>
+        </select>
+      </div>
+      
+      <button id="generate-btn" class="predict-btn">Generate Prediction</button>
+    </div>
+    
+    <div id="prediction-result" class="hidden">
+      <h3>Prediction Result:</h3>
+      <div id="prediction-text" class="prediction-text"></div>
+    </div>
+  </div>
+
+  <script src="predict.js"></script>
+</body>
+</html>

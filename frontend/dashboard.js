@@ -1,11 +1,10 @@
 let allTags = {};
 
-document.addEventListener('DOMContentLoaded', async () => {
-  allTags = await fetch('/api/tags').then(res => res.json());
-  renderTagsTable(allTags);
-  setupSearch();
-  setupSorting();
-});
+async function fetchTags() {
+  const response = await fetch('http://localhost:3000/api/tags');
+  if (!response.ok) throw new Error('Failed to fetch tags');
+  return await response.json();
+}
 
 function renderTagsTable(tags) {
   const tbody = document.querySelector('#tags-table tbody');
@@ -21,7 +20,6 @@ function renderTagsTable(tags) {
       </tr>
     `).join('');
 
-  // Add click handlers
   document.querySelectorAll('.clickable-row').forEach(row => {
     row.addEventListener('click', () => {
       window.location.href = `tag.html?tag=${encodeURIComponent(row.getAttribute('data-tag'))}`;
@@ -40,26 +38,39 @@ function setupSearch() {
 }
 
 function setupSorting() {
-  document.getElementById('sort').addEventListener('change', (e) => {
-    const sortedTags = { ...allTags };
+  document.getElementById('sort').addEventListener('change', async (e) => {
+    const tags = await fetchTags();
     const sortValue = e.target.value;
     
-    const sortedEntries = Object.entries(sortedTags).sort((a, b) => {
-      const [tagA, statsA] = a;
-      const [tagB, statsB] = b;
+    const sortedEntries = Object.entries(tags).sort(([tagA, statsA], [tagB, statsB]) => {
+      const variationA = parseFloat(statsA.variation);
+      const variationB = parseFloat(statsB.variation);
       
       switch(sortValue) {
         case 'name-asc': return tagA.localeCompare(tagB);
         case 'name-desc': return tagB.localeCompare(tagA);
         case 'current-desc': return statsB.current_month_avg - statsA.current_month_avg;
         case 'current-asc': return statsA.current_month_avg - statsB.current_month_avg;
-        case 'variation-desc': return parseFloat(statsB.variation) - parseFloat(statsA.variation);
-        case 'variation-asc': return parseFloat(statsA.variation) - parseFloat(statsB.variation);
+        case 'variation-desc': return variationB - variationA;
+        case 'variation-asc': return variationA - variationB;
         default: return 0;
       }
     });
     
-    const sortedTagsObj = Object.fromEntries(sortedEntries);
-    renderTagsTable(sortedTagsObj);
+    renderTagsTable(Object.fromEntries(sortedEntries));
   });
 }
+
+async function init() {
+  try {
+    allTags = await fetchTags();
+    renderTagsTable(allTags);
+    setupSearch();
+    setupSorting();
+  } catch (error) {
+    console.error('Initialization error:', error);
+    alert('Failed to load data. Please refresh the page.');
+  }
+}
+
+init();
