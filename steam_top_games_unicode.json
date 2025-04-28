@@ -2,8 +2,7 @@
   {
     "name": "Counter-Strike 2",
     "appid": 730,
-    "current_players": 0,
-    "30_day_avg_players": 1041720,
+    "30_day_avg_players": 1039067,
     "top_5_tags": [
       "Action",
       "Free To Play",
@@ -15,8 +14,7 @@
   {
     "name": "PUBG: BATTLEGROUNDS",
     "appid": 578080,
-    "current_players": 0,
-    "30_day_avg_players": 415906,
+    "30_day_avg_players": 403951,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -28,8 +26,7 @@
   {
     "name": "Dota 2",
     "appid": 570,
-    "current_players": 0,
-    "30_day_avg_players": 473502,
+    "30_day_avg_players": 471305,
     "top_5_tags": [
       "Action",
       "Strategy",
@@ -41,8 +38,7 @@
   {
     "name": "Wallpaper Engine",
     "appid": 431960,
-    "current_players": 0,
-    "30_day_avg_players": 80854,
+    "30_day_avg_players": 79053,
     "top_5_tags": [
       "Casual",
       "Indie",
@@ -54,7 +50,6 @@
   {
     "name": "Marvel Rivals",
     "appid": 2767030,
-    "current_players": 0,
     "30_day_avg_players": 148295,
     "top_5_tags": [
       "Action",
@@ -65,23 +60,9 @@
     ]
   },
   {
-    "name": "Schedule I",
-    "appid": 3164500,
-    "current_players": 0,
-    "30_day_avg_players": 220997,
-    "top_5_tags": [
-      "Action",
-      "Indie",
-      "Simulation",
-      "Strategy",
-      "Early Access"
-    ]
-  },
-  {
     "name": "R.E.P.O.",
     "appid": 3241660,
-    "current_players": 0,
-    "30_day_avg_players": 132676,
+    "30_day_avg_players": 112591,
     "top_5_tags": [
       "Action",
       "Early Access",
@@ -91,10 +72,33 @@
     ]
   },
   {
+    "name": "The Elder Scrolls IV: Oblivion Remastered",
+    "appid": 2623190,
+    "30_day_avg_players": "N/A",
+    "top_5_tags": [
+      "RPG",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Schedule I",
+    "appid": 3164500,
+    "30_day_avg_players": 192654,
+    "top_5_tags": [
+      "Action",
+      "Indie",
+      "Simulation",
+      "Strategy",
+      "Early Access"
+    ]
+  },
+  {
     "name": "Monster Hunter Wilds",
     "appid": 2246340,
-    "current_players": 0,
-    "30_day_avg_players": 190071,
+    "30_day_avg_players": 133020,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -106,8 +110,7 @@
   {
     "name": "Apex Legends™",
     "appid": 1172470,
-    "current_players": 0,
-    "30_day_avg_players": 115960,
+    "30_day_avg_players": 124757,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -117,14 +120,13 @@
     ]
   },
   {
-    "name": "Call of Duty®",
-    "appid": 1938090,
-    "current_players": 0,
-    "30_day_avg_players": 62555,
+    "name": "Baldur's Gate 3",
+    "appid": 1086940,
+    "30_day_avg_players": 70973,
     "top_5_tags": [
-      "Action",
-      "N/A",
-      "N/A",
+      "Adventure",
+      "RPG",
+      "Strategy",
       "N/A",
       "N/A"
     ]
@@ -132,8 +134,7 @@
   {
     "name": "War Thunder",
     "appid": 236390,
-    "current_players": 0,
-    "30_day_avg_players": 58441,
+    "30_day_avg_players": 56171,
     "top_5_tags": [
       "Action",
       "Massively Multiplayer",
@@ -143,23 +144,21 @@
     ]
   },
   {
-    "name": "Path of Exile 2",
-    "appid": 2694490,
-    "current_players": 0,
-    "30_day_avg_players": 70576,
+    "name": "Call of Duty®",
+    "appid": 1938090,
+    "30_day_avg_players": 72614,
     "top_5_tags": [
       "Action",
-      "Adventure",
-      "Massively Multiplayer",
-      "RPG",
-      "Early Access"
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
     ]
   },
   {
     "name": "Tom Clancy's Rainbow Six® Siege",
     "appid": 359550,
-    "current_players": 0,
-    "30_day_avg_players": 77332,
+    "30_day_avg_players": 70026,
     "top_5_tags": [
       "Action",
       "N/A",
@@ -171,8 +170,7 @@
   {
     "name": "NARAKA: BLADEPOINT",
     "appid": 1203220,
-    "current_players": 0,
-    "30_day_avg_players": 76395,
+    "30_day_avg_players": 74589,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -184,8 +182,7 @@
   {
     "name": "Stardew Valley",
     "appid": 413150,
-    "current_players": 0,
-    "30_day_avg_players": 64447,
+    "30_day_avg_players": 60132,
     "top_5_tags": [
       "Indie",
       "RPG",
@@ -195,49 +192,21 @@
     ]
   },
   {
-    "name": "Terraria",
-    "appid": 105600,
-    "current_players": 0,
-    "30_day_avg_players": 31074,
+    "name": "Delta Force",
+    "appid": 2507950,
+    "30_day_avg_players": 57462,
     "top_5_tags": [
       "Action",
       "Adventure",
-      "Indie",
-      "RPG",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Rust",
-    "appid": 252490,
-    "current_players": 0,
-    "30_day_avg_players": 109105,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Indie",
       "Massively Multiplayer",
-      "RPG"
-    ]
-  },
-  {
-    "name": "Grand Theft Auto V Legacy",
-    "appid": 271590,
-    "current_players": 0,
-    "30_day_avg_players": 81533,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "N/A",
-      "N/A",
+      "Free To Play",
       "N/A"
     ]
   },
   {
     "name": "EA SPORTS FC™ 25",
     "appid": 2669320,
-    "current_players": 0,
-    "30_day_avg_players": 52090,
+    "30_day_avg_players": 48952,
     "top_5_tags": [
       "Simulation",
       "Sports",
@@ -247,10 +216,57 @@
     ]
   },
   {
+    "name": "Grand Theft Auto V Legacy",
+    "appid": 271590,
+    "30_day_avg_players": 75448,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Rust",
+    "appid": 252490,
+    "30_day_avg_players": 103202,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "Massively Multiplayer",
+      "RPG"
+    ]
+  },
+  {
+    "name": "Terraria",
+    "appid": 105600,
+    "30_day_avg_players": 29916,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "RPG",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Clair Obscur: Expedition 33",
+    "appid": 1903340,
+    "30_day_avg_players": 66599,
+    "top_5_tags": [
+      "Action",
+      "RPG",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
     "name": "Dead by Daylight",
     "appid": 381210,
-    "current_players": 0,
-    "30_day_avg_players": 39555,
+    "30_day_avg_players": 42688,
     "top_5_tags": [
       "Action",
       "N/A",
@@ -260,13 +276,12 @@
     ]
   },
   {
-    "name": "HELLDIVERS™ 2",
-    "appid": 553850,
-    "current_players": 0,
-    "30_day_avg_players": 41062,
+    "name": "Team Fortress 2",
+    "appid": 440,
+    "30_day_avg_players": 50512,
     "top_5_tags": [
       "Action",
-      "N/A",
+      "Free To Play",
       "N/A",
       "N/A",
       "N/A"
@@ -275,8 +290,7 @@
   {
     "name": "Grand Theft Auto V Enhanced",
     "appid": 3240220,
-    "current_players": 0,
-    "30_day_avg_players": 62529,
+    "30_day_avg_players": 49825,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -286,205 +300,9 @@
     ]
   },
   {
-    "name": "Team Fortress 2",
-    "appid": 440,
-    "current_players": 0,
-    "30_day_avg_players": 51467,
-    "top_5_tags": [
-      "Action",
-      "Free To Play",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Delta Force",
-    "appid": 2507950,
-    "current_players": 0,
-    "30_day_avg_players": 53937,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Massively Multiplayer",
-      "Free To Play",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Red Dead Redemption 2",
-    "appid": 1174180,
-    "current_players": 0,
-    "30_day_avg_players": 37744,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Baldur's Gate 3",
-    "appid": 1086940,
-    "current_players": 0,
-    "30_day_avg_players": 52948,
-    "top_5_tags": [
-      "Adventure",
-      "RPG",
-      "Strategy",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Euro Truck Simulator 2",
-    "appid": 227300,
-    "current_players": 0,
-    "30_day_avg_players": 28564,
-    "top_5_tags": [
-      "Indie",
-      "Simulation",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Warframe",
-    "appid": 230410,
-    "current_players": 0,
-    "30_day_avg_players": 57114,
-    "top_5_tags": [
-      "Action",
-      "RPG",
-      "Free To Play",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Don't Starve Together",
-    "appid": 322330,
-    "current_players": 0,
-    "30_day_avg_players": 31609,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Indie",
-      "RPG",
-      "Simulation"
-    ]
-  },
-  {
-    "name": "Left 4 Dead 2",
-    "appid": 550,
-    "current_players": 0,
-    "30_day_avg_players": 25078,
-    "top_5_tags": [
-      "Action",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "ELDEN RING",
-    "appid": 1245620,
-    "current_players": 0,
-    "30_day_avg_players": 46555,
-    "top_5_tags": [
-      "Action",
-      "RPG",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Yu-Gi-Oh! Master Duel",
-    "appid": 1449850,
-    "current_players": 0,
-    "30_day_avg_players": 21158,
-    "top_5_tags": [
-      "Simulation",
-      "Strategy",
-      "Free To Play",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Hearts of Iron IV",
-    "appid": 394360,
-    "current_players": 0,
-    "30_day_avg_players": 37980,
-    "top_5_tags": [
-      "Simulation",
-      "Strategy",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Geometry Dash",
-    "appid": 322170,
-    "current_players": 0,
-    "30_day_avg_players": 16692,
-    "top_5_tags": [
-      "Action",
-      "Indie",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "The Sims™ 4",
-    "appid": 1222670,
-    "current_players": 0,
-    "30_day_avg_players": 33224,
-    "top_5_tags": [
-      "Adventure",
-      "Casual",
-      "Simulation",
-      "Free To Play",
-      "N/A"
-    ]
-  },
-  {
-    "name": "tModLoader",
-    "appid": 1281930,
-    "current_players": 0,
-    "30_day_avg_players": 30598,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Indie",
-      "RPG",
-      "Free To Play"
-    ]
-  },
-  {
-    "name": "VRChat",
-    "appid": 438100,
-    "current_players": 0,
-    "30_day_avg_players": 36024,
-    "top_5_tags": [
-      "Adventure",
-      "Casual",
-      "Massively Multiplayer",
-      "Simulation",
-      "Sports"
-    ]
-  },
-  {
-    "name": "The Binding of Isaac: Rebirth",
-    "appid": 250900,
-    "current_players": 0,
-    "30_day_avg_players": 21173,
+    "name": "HELLDIVERS™ 2",
+    "appid": 553850,
+    "30_day_avg_players": 34144,
     "top_5_tags": [
       "Action",
       "N/A",
@@ -496,8 +314,7 @@
   {
     "name": "Overwatch® 2",
     "appid": 2357570,
-    "current_players": 0,
-    "30_day_avg_players": 24985,
+    "30_day_avg_players": 26617,
     "top_5_tags": [
       "Action",
       "Free To Play",
@@ -507,10 +324,165 @@
     ]
   },
   {
-    "name": "Cyberpunk 2077",
-    "appid": 1091500,
-    "current_players": 0,
-    "30_day_avg_players": 34353,
+    "name": "Last Epoch",
+    "appid": 899770,
+    "30_day_avg_players": 29444,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "RPG",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Warframe",
+    "appid": 230410,
+    "30_day_avg_players": 51854,
+    "top_5_tags": [
+      "Action",
+      "RPG",
+      "Free To Play",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Euro Truck Simulator 2",
+    "appid": 227300,
+    "30_day_avg_players": 28059,
+    "top_5_tags": [
+      "Indie",
+      "Simulation",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Geometry Dash",
+    "appid": 322170,
+    "30_day_avg_players": 18417,
+    "top_5_tags": [
+      "Action",
+      "Indie",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Left 4 Dead 2",
+    "appid": 550,
+    "30_day_avg_players": 23767,
+    "top_5_tags": [
+      "Action",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "ELDEN RING",
+    "appid": 1245620,
+    "30_day_avg_players": 43041,
+    "top_5_tags": [
+      "Action",
+      "RPG",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Don't Starve Together",
+    "appid": 322330,
+    "30_day_avg_players": 30502,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "RPG",
+      "Simulation"
+    ]
+  },
+  {
+    "name": "Path of Exile 2",
+    "appid": 2694490,
+    "30_day_avg_players": 90773,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "Massively Multiplayer",
+      "RPG",
+      "Early Access"
+    ]
+  },
+  {
+    "name": "Red Dead Redemption 2",
+    "appid": 1174180,
+    "30_day_avg_players": 37894,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "VRChat",
+    "appid": 438100,
+    "30_day_avg_players": 35719,
+    "top_5_tags": [
+      "Adventure",
+      "Casual",
+      "Massively Multiplayer",
+      "Simulation",
+      "Sports"
+    ]
+  },
+  {
+    "name": "Hearts of Iron IV",
+    "appid": 394360,
+    "30_day_avg_players": 36521,
+    "top_5_tags": [
+      "Simulation",
+      "Strategy",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Yu-Gi-Oh! Master Duel",
+    "appid": 1449850,
+    "30_day_avg_players": 21272,
+    "top_5_tags": [
+      "Simulation",
+      "Strategy",
+      "Free To Play",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "The Sims™ 4",
+    "appid": 1222670,
+    "30_day_avg_players": 31389,
+    "top_5_tags": [
+      "Adventure",
+      "Casual",
+      "Simulation",
+      "Free To Play",
+      "N/A"
+    ]
+  },
+  {
+    "name": "The Elder Scrolls V: Skyrim Special Edition",
+    "appid": 489830,
+    "30_day_avg_players": 23617,
     "top_5_tags": [
       "RPG",
       "N/A",
@@ -520,14 +492,25 @@
     ]
   },
   {
-    "name": "Balatro",
-    "appid": 2379780,
-    "current_players": 0,
-    "30_day_avg_players": 19651,
+    "name": "tModLoader",
+    "appid": 1281930,
+    "30_day_avg_players": 29178,
     "top_5_tags": [
-      "Casual",
+      "Action",
+      "Adventure",
       "Indie",
-      "Strategy",
+      "RPG",
+      "Free To Play"
+    ]
+  },
+  {
+    "name": "The Binding of Isaac: Rebirth",
+    "appid": 250900,
+    "30_day_avg_players": 20079,
+    "top_5_tags": [
+      "Action",
+      "N/A",
+      "N/A",
       "N/A",
       "N/A"
     ]
@@ -535,8 +518,7 @@
   {
     "name": "Rocket League®",
     "appid": 252950,
-    "current_players": 0,
-    "30_day_avg_players": 24085,
+    "30_day_avg_players": 23733,
     "top_5_tags": [
       "Action",
       "Indie",
@@ -548,8 +530,7 @@
   {
     "name": "BeamNG.drive",
     "appid": 284160,
-    "current_players": 0,
-    "30_day_avg_players": 15711,
+    "30_day_avg_players": 15903,
     "top_5_tags": [
       "Racing",
       "Simulation",
@@ -559,23 +540,9 @@
     ]
   },
   {
-    "name": "Split Fiction",
-    "appid": 2001120,
-    "current_players": 0,
-    "30_day_avg_players": 36638,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
     "name": "Crosshair X",
     "appid": 1366800,
-    "current_players": 0,
-    "30_day_avg_players": 41653,
+    "30_day_avg_players": 41858,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -585,27 +552,73 @@
     ]
   },
   {
-    "name": "Soundpad",
-    "appid": 629520,
-    "current_players": 0,
-    "30_day_avg_players": 20621,
+    "name": "Balatro",
+    "appid": 2379780,
+    "30_day_avg_players": 17861,
     "top_5_tags": [
-      "Audio Production",
-      "Utilities",
+      "Casual",
+      "Indie",
+      "Strategy",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Once Human",
+    "appid": 2139460,
+    "30_day_avg_players": 24591,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "RPG",
+      "Simulation",
+      "Strategy"
+    ]
+  },
+  {
+    "name": "Bongo Cat",
+    "appid": 3419430,
+    "30_day_avg_players": 96201,
+    "top_5_tags": [
+      "Casual",
+      "Indie",
+      "Simulation",
+      "Free To Play",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "appid": 1091500,
+    "30_day_avg_players": 29926,
+    "top_5_tags": [
+      "RPG",
+      "N/A",
       "N/A",
       "N/A",
       "N/A"
     ]
   },
   {
-    "name": "Limbus Company",
-    "appid": 1973530,
-    "current_players": 0,
-    "30_day_avg_players": 20842,
+    "name": "Half Sword Tech Demo",
+    "appid": 2642680,
+    "30_day_avg_players": 5705,
     "top_5_tags": [
       "Action",
-      "RPG",
-      "Strategy",
+      "Adventure",
+      "Indie",
+      "Simulation",
+      "N/A"
+    ]
+  },
+  {
+    "name": "AppID 1329410",
+    "appid": 1329410,
+    "30_day_avg_players": 9994,
+    "top_5_tags": [
+      "N/A",
+      "N/A",
+      "N/A",
       "N/A",
       "N/A"
     ]
@@ -613,8 +626,7 @@
   {
     "name": "Garry's Mod",
     "appid": 4000,
-    "current_players": 0,
-    "30_day_avg_players": 23540,
+    "30_day_avg_players": 23565,
     "top_5_tags": [
       "Casual",
       "Indie",
@@ -624,101 +636,21 @@
     ]
   },
   {
-    "name": "NBA 2K25",
-    "appid": 2878980,
-    "current_players": 0,
-    "30_day_avg_players": 23303,
-    "top_5_tags": [
-      "Simulation",
-      "Sports",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Sid Meier’s Civilization® VI",
-    "appid": 289070,
-    "current_players": 0,
-    "30_day_avg_players": 36090,
-    "top_5_tags": [
-      "Strategy",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "The Elder Scrolls V: Skyrim Special Edition",
-    "appid": 489830,
-    "current_players": 0,
-    "30_day_avg_players": 24009,
-    "top_5_tags": [
-      "RPG",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Street Fighter™ 6",
-    "appid": 1364780,
-    "current_players": 0,
-    "30_day_avg_players": 17703,
+    "name": "Forza Horizon 5",
+    "appid": 1551360,
+    "30_day_avg_players": 11474,
     "top_5_tags": [
       "Action",
       "Adventure",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Schedule I: Free Sample",
-    "appid": 3205720,
-    "current_players": 0,
-    "30_day_avg_players": 14511,
-    "top_5_tags": [
-      "Action",
-      "Indie",
+      "Racing",
       "Simulation",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Black Myth: Wukong",
-    "appid": 2358720,
-    "current_players": 0,
-    "30_day_avg_players": 24016,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "RPG",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Brawlhalla",
-    "appid": 291550,
-    "current_players": 0,
-    "30_day_avg_players": 10998,
-    "top_5_tags": [
-      "Action",
-      "Indie",
-      "Free To Play",
-      "N/A",
-      "N/A"
+      "Sports"
     ]
   },
   {
     "name": "Phasmophobia",
     "appid": 739630,
-    "current_players": 0,
-    "30_day_avg_players": 16174,
+    "30_day_avg_players": 15305,
     "top_5_tags": [
       "Action",
       "Indie",
@@ -728,10 +660,33 @@
     ]
   },
   {
+    "name": "NBA 2K25",
+    "appid": 2878980,
+    "30_day_avg_players": 22496,
+    "top_5_tags": [
+      "Simulation",
+      "Sports",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Soundpad",
+    "appid": 629520,
+    "30_day_avg_players": 19417,
+    "top_5_tags": [
+      "Audio Production",
+      "Utilities",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
     "name": "DayZ",
     "appid": 221100,
-    "current_players": 0,
-    "30_day_avg_players": 38035,
+    "30_day_avg_players": 36964,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -741,26 +696,24 @@
     ]
   },
   {
-    "name": "Assetto Corsa",
-    "appid": 244210,
-    "current_players": 0,
-    "30_day_avg_players": 9642,
+    "name": "Limbus Company",
+    "appid": 1973530,
+    "30_day_avg_players": 17452,
     "top_5_tags": [
-      "Indie",
-      "Racing",
-      "Simulation",
-      "Sports",
+      "Action",
+      "RPG",
+      "Strategy",
+      "N/A",
       "N/A"
     ]
   },
   {
-    "name": "Destiny 2",
-    "appid": 1085660,
-    "current_players": 0,
-    "30_day_avg_players": 37116,
+    "name": "Brawlhalla",
+    "appid": 291550,
+    "30_day_avg_players": 10933,
     "top_5_tags": [
       "Action",
-      "Adventure",
+      "Indie",
       "Free To Play",
       "N/A",
       "N/A"
@@ -769,8 +722,7 @@
   {
     "name": "7 Days to Die",
     "appid": 251570,
-    "current_players": 0,
-    "30_day_avg_players": 25313,
+    "30_day_avg_players": 25320,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -780,10 +732,33 @@
     ]
   },
   {
+    "name": "Sid Meier’s Civilization® VI",
+    "appid": 289070,
+    "30_day_avg_players": 33723,
+    "top_5_tags": [
+      "Strategy",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Assetto Corsa",
+    "appid": 244210,
+    "30_day_avg_players": 9547,
+    "top_5_tags": [
+      "Indie",
+      "Racing",
+      "Simulation",
+      "Sports",
+      "N/A"
+    ]
+  },
+  {
     "name": "Football Manager 2024",
     "appid": 2252570,
-    "current_players": 0,
-    "30_day_avg_players": 45706,
+    "30_day_avg_players": 45769,
     "top_5_tags": [
       "Simulation",
       "Sports",
@@ -793,13 +768,24 @@
     ]
   },
   {
-    "name": "Total War: WARHAMMER III",
-    "appid": 1142710,
-    "current_players": 0,
-    "30_day_avg_players": 23593,
+    "name": "Slay the Spire",
+    "appid": 646570,
+    "30_day_avg_players": 13531,
+    "top_5_tags": [
+      "Indie",
+      "Strategy",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Street Fighter™ 6",
+    "appid": 1364780,
+    "30_day_avg_players": 17507,
     "top_5_tags": [
       "Action",
-      "Strategy",
+      "Adventure",
       "N/A",
       "N/A",
       "N/A"
@@ -808,8 +794,7 @@
   {
     "name": "Valheim",
     "appid": 892970,
-    "current_players": 0,
-    "30_day_avg_players": 27960,
+    "30_day_avg_players": 26566,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -819,23 +804,21 @@
     ]
   },
   {
-    "name": "Palworld",
-    "appid": 1623730,
-    "current_players": 0,
-    "30_day_avg_players": 40956,
+    "name": "Aimlabs",
+    "appid": 714010,
+    "30_day_avg_players": 5082,
     "top_5_tags": [
       "Action",
       "Adventure",
+      "Casual",
       "Indie",
-      "RPG",
-      "Early Access"
+      "Simulation"
     ]
   },
   {
     "name": "Age of Empires II: Definitive Edition",
     "appid": 813780,
-    "current_players": 0,
-    "30_day_avg_players": 18363,
+    "30_day_avg_players": 18673,
     "top_5_tags": [
       "Strategy",
       "N/A",
@@ -847,8 +830,7 @@
   {
     "name": "Project Zomboid",
     "appid": 108600,
-    "current_players": 0,
-    "30_day_avg_players": 21411,
+    "30_day_avg_players": 19618,
     "top_5_tags": [
       "Indie",
       "RPG",
@@ -858,156 +840,24 @@
     ]
   },
   {
-    "name": "Sons Of The Forest",
-    "appid": 1326470,
-    "current_players": 0,
-    "30_day_avg_players": 16315,
+    "name": "Destiny 2",
+    "appid": 1085660,
+    "30_day_avg_players": 33460,
     "top_5_tags": [
       "Action",
       "Adventure",
-      "Indie",
-      "Simulation",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Slay the Spire",
-    "appid": 646570,
-    "current_players": 0,
-    "30_day_avg_players": 13758,
-    "top_5_tags": [
-      "Indie",
-      "Strategy",
-      "N/A",
+      "Free To Play",
       "N/A",
       "N/A"
-    ]
-  },
-  {
-    "name": "Aimlabs",
-    "appid": 714010,
-    "current_players": 0,
-    "30_day_avg_players": 5175,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Casual",
-      "Indie",
-      "Simulation"
     ]
   },
   {
     "name": "THE FINALS",
     "appid": 2073850,
-    "current_players": 0,
-    "30_day_avg_players": 14708,
+    "30_day_avg_players": 13768,
     "top_5_tags": [
       "Action",
       "Free To Play",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Forza Horizon 5",
-    "appid": 1551360,
-    "current_players": 0,
-    "30_day_avg_players": 11890,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Racing",
-      "Simulation",
-      "Sports"
-    ]
-  },
-  {
-    "name": "Bloons TD 6",
-    "appid": 960090,
-    "current_players": 0,
-    "30_day_avg_players": 10321,
-    "top_5_tags": [
-      "Strategy",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Bongo Cat",
-    "appid": 3419430,
-    "current_players": 0,
-    "30_day_avg_players": 51068,
-    "top_5_tags": [
-      "Casual",
-      "Indie",
-      "Simulation",
-      "Free To Play",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Kingdom Come: Deliverance II",
-    "appid": 1771300,
-    "current_players": 0,
-    "30_day_avg_players": 34461,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "RPG",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "ARK: Survival Evolved",
-    "appid": 346110,
-    "current_players": 0,
-    "30_day_avg_players": 30610,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Indie",
-      "Massively Multiplayer",
-      "RPG"
-    ]
-  },
-  {
-    "name": "Battlefield™ 1",
-    "appid": 1238840,
-    "current_players": 0,
-    "30_day_avg_players": 13328,
-    "top_5_tags": [
-      "Action",
-      "Massively Multiplayer",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Half Sword Demo",
-    "appid": 2642680,
-    "current_players": 0,
-    "30_day_avg_players": 2543,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "Indie",
-      "Simulation",
-      "N/A"
-    ]
-  },
-  {
-    "name": "OBS Studio",
-    "appid": 1905180,
-    "current_players": 0,
-    "30_day_avg_players": 14520,
-    "top_5_tags": [
-      "Utilities",
-      "Video Production",
       "N/A",
       "N/A",
       "N/A"
@@ -1016,99 +866,19 @@
   {
     "name": "Monster Hunter: World",
     "appid": 582010,
-    "current_players": 0,
-    "30_day_avg_players": 26254,
+    "30_day_avg_players": 23060,
     "top_5_tags": [
       "Action",
       "N/A",
       "N/A",
       "N/A",
       "N/A"
-    ]
-  },
-  {
-    "name": "Devil May Cry 5",
-    "appid": 601150,
-    "current_players": 0,
-    "30_day_avg_players": 3608,
-    "top_5_tags": [
-      "Action",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "FragPunk",
-    "appid": 2943650,
-    "current_players": 0,
-    "30_day_avg_players": 23087,
-    "top_5_tags": [
-      "Action",
-      "Free To Play",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Hunt: Showdown 1896",
-    "appid": 594650,
-    "current_players": 0,
-    "30_day_avg_players": 14950,
-    "top_5_tags": [
-      "Action",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "AppID 1329410",
-    "appid": 1329410,
-    "current_players": 0,
-    "30_day_avg_players": 9329,
-    "top_5_tags": [
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "RimWorld",
-    "appid": 294100,
-    "current_players": 0,
-    "30_day_avg_players": 24751,
-    "top_5_tags": [
-      "Indie",
-      "Simulation",
-      "Strategy",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Once Human",
-    "appid": 2139460,
-    "current_players": 0,
-    "30_day_avg_players": 22739,
-    "top_5_tags": [
-      "Action",
-      "Adventure",
-      "RPG",
-      "Simulation",
-      "Strategy"
     ]
   },
   {
     "name": "eFootball™",
     "appid": 1665460,
-    "current_players": 0,
-    "30_day_avg_players": 9924,
+    "30_day_avg_players": 10516,
     "top_5_tags": [
       "Simulation",
       "Sports",
@@ -1118,36 +888,69 @@
     ]
   },
   {
-    "name": "Mount & Blade II: Bannerlord",
-    "appid": 261550,
-    "current_players": 0,
-    "30_day_avg_players": 20062,
+    "name": "Total War: WARHAMMER III",
+    "appid": 1142710,
+    "30_day_avg_players": 23458,
     "top_5_tags": [
       "Action",
-      "Indie",
-      "RPG",
-      "Simulation",
-      "Strategy"
+      "Strategy",
+      "N/A",
+      "N/A",
+      "N/A"
     ]
   },
   {
-    "name": "Sultan's Game",
-    "appid": 3117820,
-    "current_players": 0,
-    "30_day_avg_players": 18813,
+    "name": "Bloons TD 6",
+    "appid": 960090,
+    "30_day_avg_players": 10608,
     "top_5_tags": [
+      "Strategy",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "ARK: Survival Evolved",
+    "appid": 346110,
+    "30_day_avg_players": 30048,
+    "top_5_tags": [
+      "Action",
       "Adventure",
       "Indie",
+      "Massively Multiplayer",
+      "RPG"
+    ]
+  },
+  {
+    "name": "Black Myth: Wukong",
+    "appid": 2358720,
+    "30_day_avg_players": 22428,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
       "RPG",
-      "Simulation",
-      "Strategy"
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "OBS Studio",
+    "appid": 1905180,
+    "30_day_avg_players": 14721,
+    "top_5_tags": [
+      "Utilities",
+      "Video Production",
+      "N/A",
+      "N/A",
+      "N/A"
     ]
   },
   {
     "name": "Farming Simulator 25",
     "appid": 2300320,
-    "current_players": 0,
-    "30_day_avg_players": 18454,
+    "30_day_avg_players": 18395,
     "top_5_tags": [
       "Simulation",
       "N/A",
@@ -1157,27 +960,25 @@
     ]
   },
   {
-    "name": "It Takes Two",
-    "appid": 1426210,
-    "current_players": 0,
-    "30_day_avg_players": 13803,
+    "name": "Palworld",
+    "appid": 1623730,
+    "30_day_avg_players": 34186,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "Indie",
+      "RPG",
+      "Early Access"
+    ]
+  },
+  {
+    "name": "Split Fiction",
+    "appid": 2001120,
+    "30_day_avg_players": 23376,
     "top_5_tags": [
       "Action",
       "Adventure",
       "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Crusader Kings III",
-    "appid": 1158310,
-    "current_players": 0,
-    "30_day_avg_players": 19204,
-    "top_5_tags": [
-      "RPG",
-      "Simulation",
-      "Strategy",
       "N/A",
       "N/A"
     ]
@@ -1185,8 +986,7 @@
   {
     "name": "Ready or Not",
     "appid": 1144200,
-    "current_players": 0,
-    "30_day_avg_players": 6989,
+    "30_day_avg_players": 7030,
     "top_5_tags": [
       "Action",
       "Adventure",
@@ -1196,79 +996,73 @@
     ]
   },
   {
-    "name": "The Last of Us™ Part II Remastered",
-    "appid": 2531310,
-    "current_players": 0,
-    "30_day_avg_players": "N/A",
+    "name": "Hunt: Showdown 1896",
+    "appid": 594650,
+    "30_day_avg_players": 15217,
     "top_5_tags": [
       "Action",
-      "Adventure",
+      "N/A",
       "N/A",
       "N/A",
       "N/A"
     ]
   },
   {
-    "name": "Satisfactory",
-    "appid": 526870,
-    "current_players": 0,
-    "30_day_avg_players": 19633,
+    "name": "RimWorld",
+    "appid": 294100,
+    "30_day_avg_players": 24662,
     "top_5_tags": [
-      "Adventure",
       "Indie",
       "Simulation",
       "Strategy",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Battlefield™ V",
-    "appid": 1238810,
-    "current_players": 0,
-    "30_day_avg_players": 11672,
-    "top_5_tags": [
-      "Action",
-      "N/A",
-      "N/A",
       "N/A",
       "N/A"
     ]
   },
   {
-    "name": "The Witcher 3: Wild Hunt",
-    "appid": 292030,
-    "current_players": 0,
-    "30_day_avg_players": 16571,
-    "top_5_tags": [
-      "RPG",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Fallout 4",
-    "appid": 377160,
-    "current_players": 0,
-    "30_day_avg_players": 16937,
-    "top_5_tags": [
-      "RPG",
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A"
-    ]
-  },
-  {
-    "name": "Hollow Knight",
-    "appid": 367520,
-    "current_players": 0,
-    "30_day_avg_players": 7900,
+    "name": "Kingdom Come: Deliverance II",
+    "appid": 1771300,
+    "30_day_avg_players": 26281,
     "top_5_tags": [
       "Action",
       "Adventure",
+      "RPG",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Mount & Blade II: Bannerlord",
+    "appid": 261550,
+    "30_day_avg_players": 19579,
+    "top_5_tags": [
+      "Action",
       "Indie",
+      "RPG",
+      "Simulation",
+      "Strategy"
+    ]
+  },
+  {
+    "name": "Crusader Kings III",
+    "appid": 1158310,
+    "30_day_avg_players": 17703,
+    "top_5_tags": [
+      "RPG",
+      "Simulation",
+      "Strategy",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Battlefield™ 1",
+    "appid": 1238840,
+    "30_day_avg_players": 10563,
+    "top_5_tags": [
+      "Action",
+      "Massively Multiplayer",
+      "N/A",
       "N/A",
       "N/A"
     ]
@@ -1276,8 +1070,7 @@
   {
     "name": "Squad",
     "appid": 393380,
-    "current_players": 0,
-    "30_day_avg_players": 12606,
+    "30_day_avg_players": 11752,
     "top_5_tags": [
       "Action",
       "Indie",
@@ -1287,14 +1080,121 @@
     ]
   },
   {
-    "name": "Deep Rock Galactic",
-    "appid": 548430,
-    "current_players": 0,
-    "30_day_avg_players": 9954,
+    "name": "RuneScape: Dragonwilds",
+    "appid": 1374490,
+    "30_day_avg_players": 23445,
     "top_5_tags": [
       "Action",
+      "Adventure",
+      "RPG",
+      "Early Access",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Fallout 4",
+    "appid": 377160,
+    "30_day_avg_players": 16773,
+    "top_5_tags": [
+      "RPG",
       "N/A",
       "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "The Long Dark",
+    "appid": 305620,
+    "30_day_avg_players": 2824,
+    "top_5_tags": [
+      "Adventure",
+      "Indie",
+      "Simulation",
+      "Strategy",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Age of Empires IV: Anniversary Edition",
+    "appid": 1466860,
+    "30_day_avg_players": 11754,
+    "top_5_tags": [
+      "Strategy",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "FragPunk",
+    "appid": 2943650,
+    "30_day_avg_players": 11772,
+    "top_5_tags": [
+      "Action",
+      "Free To Play",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Warhammer 40,000: Space Marine 2",
+    "appid": 2183900,
+    "30_day_avg_players": 8277,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "RPG",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt",
+    "appid": 292030,
+    "30_day_avg_players": 15111,
+    "top_5_tags": [
+      "RPG",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Satisfactory",
+    "appid": 526870,
+    "30_day_avg_players": 18991,
+    "top_5_tags": [
+      "Adventure",
+      "Indie",
+      "Simulation",
+      "Strategy",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Forza Horizon 4",
+    "appid": 1293830,
+    "30_day_avg_players": 6239,
+    "top_5_tags": [
+      "Racing",
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A"
+    ]
+  },
+  {
+    "name": "Hollow Knight",
+    "appid": 367520,
+    "30_day_avg_players": 8219,
+    "top_5_tags": [
+      "Action",
+      "Adventure",
+      "Indie",
       "N/A",
       "N/A"
     ]

@@ -3,7 +3,7 @@ import json
 import time
 from datetime import datetime, timedelta,date
 
-def get_top_steam_games(limit=100):
+def get_top_steam_games(limit):
     """Fetches top played games from Steam's API with Unicode support."""
     url = "https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/"
     try:
@@ -24,13 +24,13 @@ def get_30_day_avg_players(appid):
         response = requests.get(url, timeout=10)
         data = response.json()
         if not data:
-            return "N/A"
+            return "0"
         cutoff = int((datetime.now() - timedelta(days=30)).timestamp())
         last_30_days = [day[1] for day in data if day[0] >= cutoff]
-        return round(sum(last_30_days) / len(last_30_days)) if last_30_days else "N/A"
+        return round(sum(last_30_days) / len(last_30_days)) if last_30_days else "0"
     except Exception as e:
         print(f"Error processing AppID {appid}: {e}")
-        return "N/A"
+        return "0"
 
 def get_steam_game_details(appid):
     """Fetches game details with Unicode support and guaranteed 5 tags, with fallback for non-English names."""
@@ -76,7 +76,7 @@ def get_steam_game_details(appid):
     }
 
 def getData():
-    top_games = get_top_steam_games(limit=100)
+    top_games = get_top_steam_games(100)
     if not top_games:
         print("Failed to fetch top games. Exiting.")
         return
@@ -107,7 +107,7 @@ def getData():
         json.dump(output_data, f, indent=2, ensure_ascii=False)
     print("\nSuccess! Data saved to steam_top_games_unicode.json")
 
-#getData()
+getData()
 
 
 
@@ -132,37 +132,38 @@ with open("games.csv", "w", newline='', encoding='utf-8') as f:
 import psycopg2
 
 
+def insert_into_database():
+    conn = psycopg2.connect(
+        host="localhost",
+        port="5432",
+        dbname="Games",
+        user="postgres",
+        password="Aeopbpb!2"
+    )
+    cur = conn.cursor()
 
-conn = psycopg2.connect(
-    host="localhost",
-    port="5432",
-    dbname="Games",
-    user="postgres",
-    password="Aeopbpb!2"
-)
-cur = conn.cursor()
-
-today = date.today().replace(day=1) 
+    today = date.today().replace(day=1) 
 
 
-for game in data:
-    appid = game["appid"]
-    name = game["name"]
-    avg_players = game["30_day_avg_players"]
-    tags = game["top_5_tags"]
+    for game in data:
+        appid = game["appid"]
+        name = game["name"]
+        avg_players = game["30_day_avg_players"]
+        tags = game["top_5_tags"]
 
-    for tag in tags:
-        if tag != "N/A":
-            cur.execute(
-                """
-                INSERT INTO steam_game_stats (appid, name, avg_players, tag, month_collected)
-                VALUES (%s, %s, %s, %s, %s, %s)
-                """,
-                (appid, name, avg_players if isinstance(avg_players, int) else None, tag, today)
-            )
+        for tag in tags:
+            if tag != "N/A":
+                cur.execute(
+                    """
+                    INSERT INTO steam_game_stats (appid, name, avg_players, tag, month_collected)
+                    VALUES (%s, %s, %s, %s, %s)
+                    """,
+                    (appid, name, avg_players if isinstance(avg_players, int) else None, tag, today)
+                )
 
-conn.commit()
-cur.close()
-conn.close()
+    conn.commit()
+    cur.close()
+    conn.close()
 
-print(" Data inserted into PostgreSQL.")
+    print(" Data inserted into PostgreSQL.")
+insert_into_database()

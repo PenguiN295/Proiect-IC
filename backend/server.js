@@ -1,57 +1,101 @@
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
-const path = require('path');
-
-const axios = require('axios');
+const { Pool } = require('pg');
 const { OpenAI } = require("openai");
+const path = require('path'); 
+// Initialize Express app
+const app = express();
+const PORT = process.env.PORT || 3000;
 
+// Database configuration
+const pool = new Pool({
+  user: process.env.DB_USER || 'postgres',
+  host: process.env.DB_HOST || 'localhost',
+  database: process.env.DB_NAME || 'Games',
+  password: process.env.DB_PASSWORD || 'Aeopbpb!2',
+  port: process.env.DB_PORT || 5432,
+});
+
+// OpenAI configuration
 const baseURL = "https://api.aimlapi.com/v1";
-const apiKey = "90c223dd4ca443ba8265791854957a4c";
+const apiKey = process.env.OPENAI_API_KEY || "90c223dd4ca443ba8265791854957a4c";
 
 const api = new OpenAI({
   apiKey,
   baseURL,
 });
 
-const OPENAI_API_KEY = '90c223dd4ca443ba8265791854957a4c';
-const OPENAI_URL = 'https://api.aimlapi.com/v1';
-
-const app = express();
-const PORT = 3000;
-
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Helper function to load game data
-function getGameData() {
-  const rawData = fs.readFileSync(path.join(__dirname, 'data.json'));
-  return JSON.parse(rawData);
+// Helper functions
+async function getTagStats() {
+  try {
+    const query = `
+      SELECT 
+        t.tag,
+        SUM(g.avg_players) AS current_month_total,
+        COUNT(g.appid) AS game_count
+      FROM 
+        steam_game_stats g
+      JOIN 
+        tags t ON g.tag = t.tag
+      WHERE 
+        g.month_collected = (SELECT MAX(month_collected) FROM steam_game_stats)
+      GROUP BY 
+        t.tag;
+    `;
+    
+    const previousMonthQuery = `
+      SELECT 
+        t.tag,
+        SUM(g.avg_players) AS previous_month_total
+      FROM 
+        steam_game_stats g
+      JOIN 
+        tags t ON g.tag = t.tag
+      WHERE 
+        g.month_collected = (SELECT MAX(month_collected) FROM steam_game_stats WHERE month_collected < (SELECT MAX(month_collected) FROM steam_game_stats))
+      GROUP BY 
+        t.tag;
+    `;
+
+    const [currentMonthResult, previousMonthResult] = await Promise.all([
+      pool.query(query),
+      pool.query(previousMonthQuery)
+    ]);
+
+    // Combine results
+    const tagStats = {};
+    
+    currentMonthResult.rows.forEach(row => {
+      tagStats[row.tag] = {
+        current_month_total: row.current_month_total,
+        game_count: row.game_count,
+        previous_month_total: 0
+      };
+    });
+
+    previousMonthResult.rows.forEach(row => {
+      if (tagStats[row.tag]) {
+        tagStats[row.tag].previous_month_total = row.previous_month_total;
+      }
+    });
+
+    return tagStats;
+  } catch (error) {
+    console.error('Error in getTagStats:', error);
+    throw error;
+  }
 }
 
 // API Endpoints
-app.get('/api/tags', (req, res) => {
+app.get('/api/tags', async (req, res) => {
   try {
-    const data = getGameData();
-    const tagStats = {};
-
-    data.games.forEach(game => {
-      game.tags.forEach(tag => {
-        if (!tagStats[tag]) {
-          tagStats[tag] = {
-            current_month_total: 0,
-            previous_month_total: 0,
-            game_count: 0
-          };
-        }
-        tagStats[tag].current_month_total += game.current_month_avg;
-        tagStats[tag].previous_month_total += game.previous_month_avg;
-        tagStats[tag].game_count += 1;
-      });
-    });
-
+    const tagStats = await getTagStats();
+    
     const result = {};
     Object.keys(tagStats).forEach(tag => {
       const current = tagStats[tag].current_month_total;
@@ -59,7 +103,7 @@ app.get('/api/tags', (req, res) => {
       result[tag] = {
         current_month_avg: Math.round(current / tagStats[tag].game_count),
         previous_month_avg: Math.round(previous / tagStats[tag].game_count),
-        variation: ((current - previous) / previous * 100).toFixed(1)
+        variation: previous > 0 ? ((current - previous) / previous * 100).toFixed(1) : 'N/A'
       };
     });
 
@@ -70,59 +114,108 @@ app.get('/api/tags', (req, res) => {
   }
 });
 
-app.get('/api/games/by-tag/:tag', (req, res) => {
+app.get('/api/games/by-tag/:tag', async (req, res) => {
   try {
-    const data = getGameData();
-    const filteredGames = data.games.filter(game => 
-      game.tags.includes(req.params.tag)
-    ).map(game => ({
-      ...game,
-      variation: ((game.current_month_avg - game.previous_month_avg) / 
-                 game.previous_month_avg * 100).toFixed(1)
+    const query = `
+      SELECT 
+        g.appid,
+        g.name,
+        g.avg_players AS current_month_avg,
+        prev.avg_players AS previous_month_avg,
+        g.tag
+      FROM 
+        games g
+      LEFT JOIN 
+        games prev ON g.appid = prev.appid 
+        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+      WHERE 
+        g.month_collected = (SELECT MAX(month_collected) FROM games)
+        AND g.tag = $1;
+    `;
+    
+    const result = await pool.query(query, [req.params.tag]);
+    
+    const games = result.rows.map(game => ({
+      appid: game.appid,
+      name: game.name,
+      current_month_avg: game.current_month_avg,
+      previous_month_avg: game.previous_month_avg || 0,
+      variation: game.previous_month_avg > 0 
+        ? ((game.current_month_avg - game.previous_month_avg) / game.previous_month_avg * 100).toFixed(1)
+        : 'N/A',
+      tags: [game.tag] // Keeping the same structure as before
     }));
 
-    res.json(filteredGames);
+    res.json(games);
   } catch (error) {
     console.error('Error in /api/games/by-tag:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
 
-app.get('/api/tags/list', (req, res) => {
+app.get('/api/tags/list', async (req, res) => {
   try {
-    const data = getGameData();
-    const tags = new Set();
-    
-    data.games.forEach(game => {
-      game.tags.forEach(tag => tags.add(tag));
-    });
-    
-    res.json(Array.from(tags));
+    const query = 'SELECT DISTINCT tag FROM tags;';
+    const result = await pool.query(query);
+    res.json(result.rows.map(row => row.tag));
   } catch (error) {
     console.error('Error in /api/tags/list:', error);
     res.status(500).json({ error: 'Failed to load tags' });
   }
 });
 
-// Update your prediction endpoint
 app.get('/api/predict/:tag/:months', async (req, res) => {
   const { tag, months } = req.params;
   
   try {
-    // Get historical data
-    const data = getGameData();
-    const tagGames = data.games.filter(game => game.tags.includes(tag));
-    
-    // Prepare prompt for AI
-    const systemPrompt = "You are a website that keeps track of the popularity of game tags by the number of players.";
-    
-    const prompt = `Predict the player count change for games with tag "${tag}" over ${months} months. 
-    Historical data: ${JSON.stringify(tagGames)}. 
-    Provide a concise prediction (2-3 sentences) with estimated percentage change.`;
+    // Verify the tag exists first
+    const tagCheck = await pool.query('SELECT 1 FROM tags WHERE tag = $1 LIMIT 1', [tag]);
+    if (tagCheck.rows.length === 0) {
+      return res.status(404).json({ error: 'Tag not found' });
+    }
 
+    // Get historical data from database
+    const query = `
+      SELECT 
+        g.appid,
+        g.name,
+        g.avg_players,
+        g.month_collected,
+        EXTRACT(MONTH FROM g.month_collected) AS month,
+        EXTRACT(YEAR FROM g.month_collected) AS year
+      FROM 
+        games g
+      WHERE 
+        g.tag = $1
+      ORDER BY 
+        g.month_collected DESC
+      LIMIT 100;
+    `;
+    
+    const result = await pool.query(query, [tag]);
+    const tagGames = result.rows;
+
+    // Prepare data for AI
+    const historicalData = tagGames.map(game => ({
+      month: game.month,
+      year: game.year,
+      avg_players: game.avg_players,
+      date: game.month_collected.toISOString().split('T')[0]
+    }));
+
+    const systemPrompt = `You are a data analyst specializing in gaming trends. Analyze the player count data and provide a prediction for the specified tag.`;
+    
+    const prompt = `Predict the player count change for games with tag "${tag}" over the next ${months} months. 
+    Historical data (last ${tagGames.length} records): ${JSON.stringify(historicalData)}.
+    
+    Provide:
+    1. A concise prediction (2-3 sentences)
+    2. Estimated percentage change
+    3. Key factors influencing this trend
+    4. Confidence level (low/medium/high)`;
 
     const completion = await api.chat.completions.create({
-      model: "gpt-4o",
+      model: "gpt-4",
       messages: [
         {
           role: "system",
@@ -134,11 +227,16 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
         },
       ],
       temperature: 0.7,
-      max_tokens: 256,
+      max_tokens: 350,
     });
 
     const prediction = completion.choices[0].message.content;
-    res.json({ prediction });
+    res.json({ 
+      prediction,
+      tag,
+      months,
+      lastUpdated: new Date().toISOString()
+    });
         
   } catch (error) {
     console.error('AI prediction error:', error);
@@ -149,7 +247,49 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
   }
 });
 
+// Health check endpoint
+app.get('/api/health', async (req, res) => {
+  try {
+    // Test database connection
+    await pool.query('SELECT 1');
+    res.json({ 
+      status: 'healthy',
+      database: 'connected',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'unhealthy',
+      database: 'disconnected',
+      error: error.message
+    });
+  }
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: 'Internal server error' });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received. Shutting down gracefully');
+  pool.end(() => {
+    console.log('Database pool closed');
+    process.exit(0);
+  });
+});
+
+process.on('SIGINT', () => {
+  console.log('SIGINT received. Shutting down gracefully');
+  pool.end(() => {
+    console.log('Database pool closed');
+    process.exit(0);
+  });
 });
