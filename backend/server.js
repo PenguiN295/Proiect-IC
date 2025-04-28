@@ -3,6 +3,20 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 
+const axios = require('axios');
+const { OpenAI } = require("openai");
+
+const baseURL = "https://api.aimlapi.com/v1";
+const apiKey = "90c223dd4ca443ba8265791854957a4c";
+
+const api = new OpenAI({
+  apiKey,
+  baseURL,
+});
+
+const OPENAI_API_KEY = '90c223dd4ca443ba8265791854957a4c';
+const OPENAI_URL = 'https://api.aimlapi.com/v1';
+
 const app = express();
 const PORT = 3000;
 
@@ -90,18 +104,49 @@ app.get('/api/tags/list', (req, res) => {
   }
 });
 
-app.get('/api/predict/:tag/:months', (req, res) => {
+// Update your prediction endpoint
+app.get('/api/predict/:tag/:months', async (req, res) => {
   const { tag, months } = req.params;
-  const dummyPredictions = {
-    "1": `Based on current trends, ${tag} may grow by 5-8% next month.`,
-    "3": `${tag} is expected to maintain steady popularity over 3 months.`,
-    "6": `Our models suggest ${tag} could see 15-20% growth in 6 months.`,
-    "12": `Long-term projection for ${tag} shows potential market dominance.`
-  };
   
-  res.json({
-    prediction: dummyPredictions[months] || `Prediction for ${tag} over ${months} months unavailable.`
-  });
+  try {
+    // Get historical data
+    const data = getGameData();
+    const tagGames = data.games.filter(game => game.tags.includes(tag));
+    
+    // Prepare prompt for AI
+    const systemPrompt = "You are a website that keeps track of the popularity of game tags by the number of players.";
+    
+    const prompt = `Predict the player count change for games with tag "${tag}" over ${months} months. 
+    Historical data: ${JSON.stringify(tagGames)}. 
+    Provide a concise prediction (2-3 sentences) with estimated percentage change.`;
+
+
+    const completion = await api.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        {
+          role: "system",
+          content: systemPrompt,
+        },
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+      temperature: 0.7,
+      max_tokens: 256,
+    });
+
+    const prediction = completion.choices[0].message.content;
+    res.json({ prediction });
+        
+  } catch (error) {
+    console.error('AI prediction error:', error);
+    res.status(500).json({ 
+      error: "Failed to generate prediction",
+      details: error.message 
+    });
+  }
 });
 
 // Start server
