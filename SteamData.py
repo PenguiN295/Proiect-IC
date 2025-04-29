@@ -166,4 +166,4 @@ def insert_into_database():
     conn.close()
 
     print(" Data inserted into PostgreSQL.")
-insert_into_database()
+#insert_into_database()

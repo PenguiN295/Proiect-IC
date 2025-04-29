@@ -101,8 +101,8 @@ app.get('/api/tags', async (req, res) => {
       const current = tagStats[tag].current_month_total;
       const previous = tagStats[tag].previous_month_total;
       result[tag] = {
-        current_month_avg: Math.round(current / tagStats[tag].game_count),
-        previous_month_avg: Math.round(previous / tagStats[tag].game_count),
+        current_month_avg: current,
+        previous_month_avg: previous,
         variation: previous > 0 ? ((current - previous) / previous * 100).toFixed(1) : 'N/A'
       };
     });
@@ -117,19 +117,19 @@ app.get('/api/tags', async (req, res) => {
 app.get('/api/games/by-tag/:tag', async (req, res) => {
   try {
     const query = `
-      SELECT 
+      SELECT DISTINCT 
         g.appid,
         g.name,
         g.avg_players AS current_month_avg,
         prev.avg_players AS previous_month_avg,
         g.tag
       FROM 
-        games g
+        steam_game_stats g
       LEFT JOIN 
-        games prev ON g.appid = prev.appid 
-        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+        steam_game_stats prev ON g.appid = prev.appid 
+        AND prev.month_collected = (SELECT MAX(month_collected) FROM steam_game_stats WHERE month_collected < (SELECT MAX(month_collected) FROM steam_game_stats))
       WHERE 
-        g.month_collected = (SELECT MAX(month_collected) FROM games)
+        g.month_collected = (SELECT MAX(month_collected) FROM steam_game_stats)
         AND g.tag = $1;
     `;
     
@@ -184,7 +184,7 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
         EXTRACT(MONTH FROM g.month_collected) AS month,
         EXTRACT(YEAR FROM g.month_collected) AS year
       FROM 
-        games g
+        steam_game_stats g
       WHERE 
         g.tag = $1
       ORDER BY 
