@@ -1,0 +1,3 @@
+2025-03-30 23:54:56 EEST LOG:  database system was shut down at 2025-03-30 23:26:14 EEST
+2025-03-30 23:59:56 EEST LOG:  checkpoint starting: time
+2025-03-30 23:59:57 EEST LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.111 s, sync=0.007 s, total=0.135 s; sync files=3, longest=0.004 s, average=0.003 s; distance=0 kB, estimate=0 kB; lsn=0/1A480D8, redo lsn=0/1A48080

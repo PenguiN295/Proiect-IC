@@ -1,0 +1,4 @@
+2025-04-08 00:27:23 EEST ERROR:  canceling statement due to user request
+2025-04-08 00:27:23 EEST LOG:  shutting down
+2025-04-08 00:27:23 EEST LOG:  checkpoint starting: shutdown immediate
+2025-04-08 00:27:23 EEST LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.008 s, total=0.034 s; sync files=3, longest=0.003 s, average=0.003 s; distance=0 kB, estimate=219 kB; lsn=0/1B1F9F8, redo lsn=0/1B1F9F8

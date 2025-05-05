@@ -1,0 +1,141 @@
+2025-04-29 11:36:46 EEST LOG:  database system was shut down at 2025-04-29 00:58:46 EEST
+2025-04-29 11:41:46 EEST LOG:  checkpoint starting: time
+2025-04-29 11:41:46 EEST LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.004 s, total=0.026 s; sync files=2, longest=0.004 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/1BC87C8, redo lsn=0/1BC8770
+2025-04-29 14:59:28 EEST ERROR:  column "steam_game_stats.tag" must appear in the GROUP BY clause or be used in an aggregate function at character 50
+2025-04-29 14:59:28 EEST STATEMENT:  SELECT
+	    appid,
+	    name,
+	    avg_players,
+	    tag,
+		month_collected
+	FROM steam_game_stats
+	GROUP BY appid, name, avg_players,month_collected
+	ORDER BY avg_players DESC NULLS LAST;
+2025-04-29 15:08:07 EEST ERROR:  invalid input syntax for type integer: "N/A"
+2025-04-29 15:08:07 EEST CONTEXT:  COPY steam_game_stats, line 20, column avg_players: "N/A"
+2025-04-29 15:08:07 EEST STATEMENT:  COPY  public.steam_game_stats ( appid, name, avg_players, tag, month_collected ) FROM STDIN  DELIMITER ',' CSV   HEADER  ENCODING 'UTF8' QUOTE '"' ESCAPE '''';
+2025-04-29 15:10:37 EEST ERROR:  invalid input syntax for type integer: "N/A"
+2025-04-29 15:10:37 EEST CONTEXT:  COPY steam_game_stats, line 20, column avg_players: "N/A"
+2025-04-29 15:10:37 EEST STATEMENT:  COPY  public.steam_game_stats ( appid, name, avg_players, tag, month_collected ) FROM STDIN  DELIMITER ',' CSV   HEADER  ENCODING 'UTF8' QUOTE '"' ESCAPE '''' FORCE NOT NULL avg_players ;
+2025-04-29 15:13:08 EEST ERROR:  relation "steam_games_stats" does not exist
+2025-04-29 15:13:08 EEST STATEMENT:  COPY steam_games_stats (appid, name, avg_players,tag,month_collected)
+	FROM 'C:\Users\Adrian\Downloads\games_old.csv'
+	DELIMITER ','
+	CSV HEADER;
+2025-04-29 15:13:21 EEST ERROR:  could not open file "C:\Users\Adrian\Downloads\games_old.csv" for reading: Permission denied
+2025-04-29 15:13:21 EEST HINT:  COPY FROM instructs the PostgreSQL server process to read a file. You may want a client-side facility such as psql's \copy.
+2025-04-29 15:13:21 EEST STATEMENT:  COPY steam_game_stats (appid, name, avg_players,tag,month_collected)
+	FROM 'C:\Users\Adrian\Downloads\games_old.csv'
+	DELIMITER ','
+	CSV HEADER;
+2025-04-29 15:16:48 EEST ERROR:  invalid input syntax for type integer: "N/A"
+2025-04-29 15:16:48 EEST CONTEXT:  COPY steam_game_stats, line 20, column avg_players: "N/A"
+2025-04-29 15:16:48 EEST STATEMENT:  COPY steam_game_stats (appid, name, avg_players,tag,month_collected)
+	FROM 'C:\Users\Adrian\Downloads\games_old.csv'
+	DELIMITER ','
+	CSV HEADER;
+2025-04-29 15:17:17 EEST ERROR:  could not open file "C:\Users\Adrian\Downloads\games_old.csv" for reading: Permission denied
+2025-04-29 15:17:17 EEST HINT:  COPY FROM instructs the PostgreSQL server process to read a file. You may want a client-side facility such as psql's \copy.
+2025-04-29 15:17:17 EEST STATEMENT:  COPY steam_game_stats (appid, name, avg_players,tag,month_collected)
+	FROM 'C:\Users\Adrian\Downloads\games_old.csv'
+	DELIMITER ','
+	CSV HEADER;
+2025-04-29 15:18:16 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-29 15:18:16 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-29 15:19:03 EEST ERROR:  relation "games" does not exist at character 228
+2025-04-29 15:19:03 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players,
+	        g.month_collected,
+	        EXTRACT(MONTH FROM g.month_collected) AS month,
+	        EXTRACT(YEAR FROM g.month_collected) AS year
+	      FROM 
+	        games g
+	      WHERE 
+	        g.tag = $1
+	      ORDER BY 
+	        g.month_collected DESC
+	      LIMIT 100;
+	    
+2025-04-29 15:19:19 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-29 15:19:19 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-29 15:19:30 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-29 15:19:30 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-29 15:19:49 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-29 15:19:49 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-29 15:21:46 EEST LOG:  checkpoint starting: time
+2025-04-29 15:21:47 EEST LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.982 s, sync=0.019 s, total=1.017 s; sync files=7, longest=0.003 s, average=0.003 s; distance=48 kB, estimate=48 kB; lsn=0/1BD4828, redo lsn=0/1BD47D0
+2025-04-29 15:26:46 EEST LOG:  checkpoint starting: time
+2025-04-29 15:26:46 EEST LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.215 s, sync=0.006 s, total=0.238 s; sync files=2, longest=0.003 s, average=0.003 s; distance=6 kB, estimate=43 kB; lsn=0/1BD6320, redo lsn=0/1BD62C8
+2025-04-29 15:27:52 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-29 15:27:52 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-29 15:27:52 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-29 23:48:59 EEST ERROR:  canceling statement due to user request
+2025-04-29 23:48:59 EEST LOG:  shutting down
+2025-04-29 23:48:59 EEST LOG:  checkpoint starting: shutdown immediate
+2025-04-29 23:48:59 EEST LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.022 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=39 kB; lsn=0/1BD63D0, redo lsn=0/1BD63D0

@@ -1,0 +1,154 @@
+2025-04-28 16:10:34 EEST LOG:  database system was shut down at 2025-04-28 13:07:44 EEST
+2025-04-28 16:15:34 EEST LOG:  checkpoint starting: time
+2025-04-28 16:15:34 EEST LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.004 s, total=0.026 s; sync files=2, longest=0.003 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/1B5AF80, redo lsn=0/1B5AF28
+2025-04-28 19:59:48 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-28 20:05:34 EEST LOG:  checkpoint starting: time
+2025-04-28 20:05:36 EEST LOG:  checkpoint complete: wrote 18 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.800 s, sync=0.026 s, total=1.842 s; sync files=9, longest=0.004 s, average=0.003 s; distance=151 kB, estimate=151 kB; lsn=0/1B80F38, redo lsn=0/1B80EE0
+2025-04-28 20:10:34 EEST LOG:  checkpoint starting: time
+2025-04-28 20:10:35 EEST LOG:  checkpoint complete: wrote 14 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.399 s, sync=0.020 s, total=1.437 s; sync files=8, longest=0.003 s, average=0.003 s; distance=189 kB, estimate=189 kB; lsn=0/1BB05C0, redo lsn=0/1BB0568
+2025-04-28 20:15:34 EEST LOG:  checkpoint starting: time
+2025-04-28 20:15:35 EEST LOG:  checkpoint complete: wrote 11 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.071 s, sync=0.019 s, total=1.106 s; sync files=8, longest=0.004 s, average=0.003 s; distance=96 kB, estimate=180 kB; lsn=0/1BC8610, redo lsn=0/1BC85B8
+2025-04-28 20:17:54 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-28 20:17:54 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-28 20:17:54 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-28 20:34:28 EEST FATAL:  password authentication failed for user "your_username"
+2025-04-28 20:34:28 EEST DETAIL:  Role "your_username" does not exist.
+	Connection matched file "C:/Program Files/PostgreSQL/17/data/pg_hba.conf" line 117: "host    all             all             ::1/128                 scram-sha-256"
+2025-04-28 20:34:28 EEST FATAL:  password authentication failed for user "your_username"
+2025-04-28 20:34:28 EEST DETAIL:  Role "your_username" does not exist.
+	Connection matched file "C:/Program Files/PostgreSQL/17/data/pg_hba.conf" line 117: "host    all             all             ::1/128                 scram-sha-256"
+2025-04-28 20:34:31 EEST FATAL:  password authentication failed for user "your_username"
+2025-04-28 20:34:31 EEST DETAIL:  Role "your_username" does not exist.
+	Connection matched file "C:/Program Files/PostgreSQL/17/data/pg_hba.conf" line 117: "host    all             all             ::1/128                 scram-sha-256"
+2025-04-28 20:34:31 EEST FATAL:  password authentication failed for user "your_username"
+2025-04-28 20:34:31 EEST DETAIL:  Role "your_username" does not exist.
+	Connection matched file "C:/Program Files/PostgreSQL/17/data/pg_hba.conf" line 117: "host    all             all             ::1/128                 scram-sha-256"
+2025-04-28 20:37:44 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-28 20:37:44 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-28 20:39:33 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-28 20:39:33 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-28 20:51:58 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-28 20:51:58 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-28 20:54:32 EEST ERROR:  relation "games" does not exist at character 228
+2025-04-28 20:54:32 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players,
+	        g.month_collected,
+	        EXTRACT(MONTH FROM g.month_collected) AS month,
+	        EXTRACT(YEAR FROM g.month_collected) AS year
+	      FROM 
+	        games g
+	      WHERE 
+	        g.tag = $1
+	      ORDER BY 
+	        g.month_collected DESC
+	      LIMIT 100;
+	    
+2025-04-28 20:54:38 EEST ERROR:  relation "games" does not exist at character 228
+2025-04-28 20:54:38 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players,
+	        g.month_collected,
+	        EXTRACT(MONTH FROM g.month_collected) AS month,
+	        EXTRACT(YEAR FROM g.month_collected) AS year
+	      FROM 
+	        games g
+	      WHERE 
+	        g.tag = $1
+	      ORDER BY 
+	        g.month_collected DESC
+	      LIMIT 100;
+	    
+2025-04-28 20:56:04 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-28 20:56:04 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-28 20:56:04 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-28 22:06:57 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-28 22:06:57 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    
+2025-04-28 22:08:06 EEST ERROR:  relation "games" does not exist at character 175
+2025-04-28 22:08:06 EEST STATEMENT:  
+	      SELECT 
+	        g.appid,
+	        g.name,
+	        g.avg_players AS current_month_avg,
+	        prev.avg_players AS previous_month_avg,
+	        g.tag
+	      FROM 
+	        games g
+	      LEFT JOIN 
+	        games prev ON g.appid = prev.appid 
+	        AND prev.month_collected = (SELECT MAX(month_collected) FROM games WHERE month_collected < (SELECT MAX(month_collected) FROM games))
+	      WHERE 
+	        g.month_collected = (SELECT MAX(month_collected) FROM games)
+	        AND g.tag = $1;
+	    

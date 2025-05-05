@@ -1,0 +1,124 @@
+2025-04-07 17:42:47 EEST LOG:  database system was shut down at 2025-04-07 15:22:43 EEST
+2025-04-07 17:47:47 EEST LOG:  checkpoint starting: time
+2025-04-07 17:47:47 EEST LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.004 s, total=0.023 s; sync files=2, longest=0.003 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/1A4ADA0, redo lsn=0/1A4AD48
+2025-04-07 21:12:47 EEST LOG:  checkpoint starting: time
+2025-04-07 21:12:54 EEST LOG:  checkpoint complete: wrote 62 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.556 s, sync=0.113 s, total=6.685 s; sync files=50, longest=0.004 s, average=0.003 s; distance=199 kB, estimate=199 kB; lsn=0/1A7CB98, redo lsn=0/1A7CB40
+2025-04-07 21:22:39 EEST ERROR:  syntax error at or near "%" at character 59
+2025-04-07 21:22:39 EEST STATEMENT:  INSERT INTO tags (tag, total_avg_players)
+	        VALUES (%s, %s)
+	        ON CONFLICT (tag) DO UPDATE SET total_avg_players = EXCLUDED.total_avg_players
+2025-04-07 21:26:35 EEST ERROR:  relation "games" already exists
+2025-04-07 21:26:35 EEST STATEMENT:  CREATE TABLE games (
+	    id SERIAL PRIMARY KEY,
+	    appid INTEGER,
+	    name TEXT,
+	    current_players INTEGER,
+	    avg_players INTEGER,
+	    tag TEXT,
+	    FOREIGN KEY (tag) REFERENCES tags(tag)
+	);
+	
+2025-04-07 21:27:47 EEST LOG:  checkpoint starting: time
+2025-04-07 21:27:52 EEST LOG:  checkpoint complete: wrote 50 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.259 s, sync=0.103 s, total=5.380 s; sync files=43, longest=0.004 s, average=0.003 s; distance=181 kB, estimate=197 kB; lsn=0/1AAA068, redo lsn=0/1AA9FF8
+2025-04-07 21:28:12 EEST ERROR:  syntax error at or near "Drop" at character 18
+2025-04-07 21:28:12 EEST STATEMENT:  DROP table games
+	Drop table tags
+	
+	
+	
+2025-04-07 21:28:20 EEST ERROR:  syntax error at or near "DROP" at character 18
+2025-04-07 21:28:20 EEST STATEMENT:  DROP table games
+	DROP table tags
+	
+	
+	
+2025-04-07 21:29:58 EEST ERROR:  relation "tags" already exists
+2025-04-07 21:29:58 EEST STATEMENT:  -- Tags table
+	CREATE TABLE tags (
+	    tag TEXT PRIMARY KEY,
+	    total_avg_players INTEGER
+	);
+	
+	-- Games table
+	CREATE TABLE games (
+	    id SERIAL PRIMARY KEY,
+	    appid INTEGER,
+	    name TEXT,
+	    current_players INTEGER,
+	    avg_players INTEGER,
+	    tag TEXT,
+	    FOREIGN KEY (tag) REFERENCES tags(tag)
+	);
+	
+2025-04-07 21:30:09 EEST ERROR:  syntax error at or near "CREATE" at character 17
+2025-04-07 21:30:09 EEST STATEMENT:  DROP TABLE tags
+	CREATE TABLE tags (
+	    tag TEXT PRIMARY KEY,
+	    total_avg_players INTEGER
+	);
+	
+	-- Games table
+	CREATE TABLE games (
+	    id SERIAL PRIMARY KEY,
+	    appid INTEGER,
+	    name TEXT,
+	    current_players INTEGER,
+	    avg_players INTEGER,
+	    tag TEXT,
+	    FOREIGN KEY (tag) REFERENCES tags(tag)
+	);
+	
+2025-04-07 21:31:19 EEST ERROR:  invalid input syntax for type integer: "appid"
+2025-04-07 21:31:19 EEST CONTEXT:  COPY games, line 1, column id: "appid"
+2025-04-07 21:31:19 EEST STATEMENT:  COPY  public.games ( id, appid, name, current_players, avg_players, tag ) FROM STDIN  DELIMITER ',' CSV   QUOTE '"' ESCAPE '''';
+2025-04-07 21:32:47 EEST LOG:  checkpoint starting: time
+2025-04-07 21:32:55 EEST LOG:  checkpoint complete: wrote 75 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=7.948 s, sync=0.130 s, total=8.096 s; sync files=57, longest=0.003 s, average=0.003 s; distance=279 kB, estimate=279 kB; lsn=0/1AEFF38, redo lsn=0/1AEFEE0
+2025-04-07 21:33:28 EEST ERROR:  syntax error at or near "id" at character 6
+2025-04-07 21:33:28 EEST STATEMENT:  Drop id
+	
+	
+2025-04-07 21:37:08 EEST ERROR:  invalid input syntax for type integer: "appid"
+2025-04-07 21:37:08 EEST CONTEXT:  COPY games, line 1, column appid: "appid"
+2025-04-07 21:37:08 EEST STATEMENT:  COPY  public.games ( appid, name, avg_players, tag ) FROM STDIN  DELIMITER ',' CSV   QUOTE '"' ESCAPE '''';
+2025-04-07 21:37:29 EEST ERROR:  invalid input syntax for type integer: "appid"
+2025-04-07 21:37:29 EEST CONTEXT:  COPY games, line 1, column appid: "appid"
+2025-04-07 21:37:29 EEST STATEMENT:  COPY  public.games ( appid, name, avg_players, tag ) FROM STDIN  DELIMITER ',' CSV   ENCODING 'BIG5' QUOTE '"' ESCAPE '''';
+2025-04-07 21:37:47 EEST LOG:  checkpoint starting: time
+2025-04-07 21:37:50 EEST LOG:  checkpoint complete: wrote 30 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.132 s, sync=0.059 s, total=3.209 s; sync files=28, longest=0.004 s, average=0.003 s; distance=158 kB, estimate=267 kB; lsn=0/1B17818, redo lsn=0/1B17788
+2025-04-07 21:39:38 EEST ERROR:  character with byte sequence 0xe2 0x84 in encoding "BIG5" has no equivalent in encoding "UTF8"
+2025-04-07 21:39:38 EEST CONTEXT:  COPY games, line 28
+2025-04-07 21:39:38 EEST STATEMENT:  COPY  public.games ( appid, name, avg_players, tag ) FROM STDIN  DELIMITER ',' CSV   HEADER  ENCODING 'BIG5' QUOTE '"' ESCAPE '''';
+2025-04-07 21:40:15 EEST ERROR:  invalid input syntax for type integer: "N/A"
+2025-04-07 21:40:15 EEST CONTEXT:  COPY games, line 239, column avg_players: "N/A"
+2025-04-07 21:40:15 EEST STATEMENT:  COPY  public.games ( appid, name, avg_players, tag ) FROM STDIN  DELIMITER ',' CSV   HEADER  ENCODING 'UTF8' QUOTE '"' ESCAPE '''';
+2025-04-07 21:40:21 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-07 21:40:21 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-07 21:40:21 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-07 21:41:27 EEST FATAL:  password authentication failed for user "postgres"
+2025-04-07 21:41:27 EEST DETAIL:  Connection matched file "C:/Program Files/PostgreSQL/17/data/pg_hba.conf" line 117: "host    all             all             ::1/128                 scram-sha-256"
+2025-04-07 21:41:27 EEST FATAL:  password authentication failed for user "postgres"
+2025-04-07 21:41:27 EEST DETAIL:  Connection matched file "C:/Program Files/PostgreSQL/17/data/pg_hba.conf" line 115: "host    all             all             127.0.0.1/32            scram-sha-256"
+2025-04-07 21:42:47 EEST LOG:  checkpoint starting: time
+2025-04-07 21:42:49 EEST LOG:  checkpoint complete: wrote 18 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.836 s, sync=0.038 s, total=1.890 s; sync files=14, longest=0.004 s, average=0.003 s; distance=32 kB, estimate=244 kB; lsn=0/1B1F948, redo lsn=0/1B1F8F0
+2025-04-07 21:45:28 EEST ERROR:  column "Action" does not exist at character 31
+2025-04-07 21:45:28 EEST STATEMENT:  SELECT * FROM games
+	where tag="Action" 
+2025-04-07 21:45:47 EEST ERROR:  column "Action" does not exist at character 31
+2025-04-07 21:45:47 EEST STATEMENT:  SELECT * FROM games
+	where tag="Action" 
+2025-04-07 21:51:50 EEST ERROR:  column "action" does not exist at character 31
+2025-04-07 21:51:50 EEST STATEMENT:  SELECT * FROM games
+	where tag=Action 
+2025-04-07 21:53:05 EEST ERROR:  column "total_avg_players" does not exist at character 30
+2025-04-07 21:53:05 EEST STATEMENT:  SELECT * FROM games
+	ORDER BY total_avg_players DESC
+	LIMIT 50;
+2025-04-07 22:09:05 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-07 22:09:05 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-04-07 22:09:05 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	

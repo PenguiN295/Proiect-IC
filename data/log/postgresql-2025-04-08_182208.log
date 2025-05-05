@@ -1,0 +1,7 @@
+2025-04-08 18:22:08 EEST LOG:  database system was shut down at 2025-04-08 17:48:23 EEST
+2025-04-08 18:27:08 EEST LOG:  checkpoint starting: time
+2025-04-08 18:27:08 EEST LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.004 s, total=0.017 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/1B215C8, redo lsn=0/1B21570
+2025-04-08 23:30:18 EEST ERROR:  canceling statement due to user request
+2025-04-08 23:30:18 EEST LOG:  shutting down
+2025-04-08 23:30:18 EEST LOG:  checkpoint starting: shutdown immediate
+2025-04-08 23:30:18 EEST LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.021 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1B21678, redo lsn=0/1B21678

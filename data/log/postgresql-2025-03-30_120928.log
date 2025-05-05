@@ -1,0 +1,43 @@
+2025-03-30 12:09:28 EEST LOG:  database system was shut down at 2025-03-30 10:46:42 EEST
+2025-03-30 12:14:28 EEST LOG:  checkpoint starting: time
+2025-03-30 12:14:28 EEST LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.003 s, total=0.016 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/15B15B0, redo lsn=0/15B1558
+2025-03-30 17:03:01 EEST ERROR:  SELECT * with no tables specified is not valid at character 8
+2025-03-30 17:03:01 EEST STATEMENT:  select *
+	
+2025-03-30 17:03:12 EEST ERROR:  relation "games" does not exist at character 15
+2025-03-30 17:03:12 EEST STATEMENT:  select * from Games
+	
+2025-03-30 17:03:22 EEST ERROR:  syntax error at end of input at character 14
+2025-03-30 17:03:22 EEST STATEMENT:  create table
+	
+2025-03-30 17:03:28 EEST ERROR:  syntax error at end of input at character 13
+2025-03-30 17:03:28 EEST STATEMENT:  create table
+2025-03-30 17:03:35 EEST ERROR:  syntax error at or near ";" at character 13
+2025-03-30 17:03:35 EEST STATEMENT:  create table;
+2025-03-30 17:03:43 EEST ERROR:  syntax error at end of input at character 18
+2025-03-30 17:03:43 EEST STATEMENT:  create table game
+2025-03-30 17:04:29 EEST LOG:  checkpoint starting: time
+2025-03-30 17:04:31 EEST ERROR:  relation "pg_default" does not exist at character 15
+2025-03-30 17:04:31 EEST STATEMENT:  select * from pg_default
+2025-03-30 17:04:33 EEST ERROR:  relation "pg_default" does not exist at character 15
+2025-03-30 17:04:33 EEST STATEMENT:  select * from pg_default
+2025-03-30 17:06:14 EEST LOG:  checkpoint complete: wrote 972 buffers (5.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=104.451 s, sync=0.654 s, total=105.122 s; sync files=301, longest=0.007 s, average=0.003 s; distance=4531 kB, estimate=4531 kB; lsn=0/1A1E388, redo lsn=0/1A1E2F8
+2025-03-30 17:07:07 EEST ERROR:  syntax error at or near ")" at character 61
+2025-03-30 17:07:07 EEST STATEMENT:  CREATE TABLE Tags (
+	  tag VARCHAR(255),
+	  player_count int,
+	); 
+2025-03-30 17:09:29 EEST LOG:  checkpoint starting: time
+2025-03-30 17:09:31 EEST LOG:  checkpoint complete: wrote 23 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.364 s, sync=0.051 s, total=2.432 s; sync files=20, longest=0.004 s, average=0.003 s; distance=93 kB, estimate=4087 kB; lsn=0/1A35770, redo lsn=0/1A35718
+2025-03-30 17:29:29 EEST LOG:  checkpoint starting: time
+2025-03-30 17:29:32 EEST LOG:  checkpoint complete: wrote 20 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.045 s, sync=0.044 s, total=2.105 s; sync files=19, longest=0.003 s, average=0.003 s; distance=73 kB, estimate=3686 kB; lsn=0/1A47F08, redo lsn=0/1A47EB0
+2025-03-30 17:50:23 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-30 17:50:23 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-30 17:50:23 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-30 23:26:14 EEST ERROR:  canceling statement due to user request
+2025-03-30 23:26:14 EEST LOG:  shutting down
+2025-03-30 23:26:14 EEST LOG:  checkpoint starting: shutdown immediate
+2025-03-30 23:26:14 EEST LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.029 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=3317 kB; lsn=0/1A47FB8, redo lsn=0/1A47FB8
