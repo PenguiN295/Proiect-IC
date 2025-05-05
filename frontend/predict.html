@@ -2,40 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tag Popularity Predictor</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <a href="index.html" class="back-link">← Back to Dashboard</a>
-    </div>
-    <h1>Tag Popularity Predictor</h1>
-    
-    <div class="prediction-controls">
-      <div class="input-group">
-        <label for="tag-select">Select Tag:</label>
-        <select id="tag-select">
-          <option value="">Loading tags...</option>
-        </select>
-      </div>
-      
-      <div class="input-group">
-        <label for="time-select">Time Frame:</label>
-        <select id="time-select">
-          <option value="1">1 month</option>
-          <option value="3">3 months</option>
-          <option value="6">6 months</option>
-          <option value="12">1 year</option>
-        </select>
-      </div>
-      
-      <button id="generate-btn" class="predict-btn">Generate Prediction</button>
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+      </a>
+      <h1><i class="fas fa-crystal-ball"></i> Tag Popularity Predictor</h1>
     </div>
     
-    <div id="prediction-result" class="hidden">
-      <h3>Prediction Result:</h3>
-      <div id="prediction-text" class="prediction-text"></div>
+    <div class="card">
+      <h2><i class="fas fa-sliders-h"></i> Prediction Parameters</h2>
+      
+      <div class="grid-container">
+        <div class="input-group">
+          <label for="tag-select"><i class="fas fa-tag"></i> Select Tag</label>
+          <select id="tag-select" class="form-control">
+            <option value="">Loading tags...</option>
+          </select>
+        </div>
+        
+        <div class="input-group">
+          <label for="time-select"><i class="fas fa-clock"></i> Time Frame</label>
+          <select id="time-select" class="form-control">
+            <option value="1">1 month</option>
+            <option value="3">3 months</option>
+            <option value="6">6 months</option>
+            <option value="12">1 year</option>
+          </select>
+        </div>
+      </div>
+      
+      <button id="generate-btn" class="btn btn-primary btn-block">
+        <i class="fas fa-bolt"></i> Generate Prediction
+      </button>
+    </div>
+    
+    <div id="prediction-result" class="card hidden">
+      <h2><i class="fas fa-lightbulb"></i> Prediction Result</h2>
+      <div id="prediction-text" class="prediction-content"></div>
     </div>
   </div>
 
