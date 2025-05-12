@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const tag = urlParams.get('tag');
   
   // Redirect if no tag specified
-  if (!tag) {
-    window.location.href = 'index.html';
-    return;
-  }
+  // if (!tag) {
+  //   window.location.href = 'index.html';
+  //   return;
+  // }
 
   // Set page title
   document.getElementById('tag-title').textContent = `Tag: ${tag}`;
