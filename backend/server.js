@@ -203,17 +203,23 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
       date: game.month_collected.toISOString().split('T')[0]
     }));
 
-    const systemPrompt = `You are a data analyst specializing in gaming trends. Analyze the player count data and provide a prediction for the specified tag.`;
+     const systemPrompt = `You are a data analyst specializing in gaming trends. Analyze the player count data and provide a prediction for the specified tag.`;
     
-    const prompt = `Predict the player count change for games with tag "${tag}" over the next ${months} months. 
-    Historical data (last ${tagGames.length} records): ${JSON.stringify(historicalData)}.
+    // const prompt = `Predict the player count change for games with tag "${tag}" over the next ${months} months. 
+    // Historical data (last ${tagGames.length} records): ${JSON.stringify(historicalData)}.
     
-    Provide:
-    1. A concise prediction (2-3 sentences)
-    2. Estimated percentage change
-    3. Key factors influencing this trend
-    4. Confidence level (low/medium/high)`;
+    // Provide:
+    // 1. A concise prediction (2-3 sentences)
+    // 2. Estimated percentage change
+    // 3. Key factors influencing this trend
+    // 4. Confidence level (low/medium/high)`;
 
+    const prompt = `I would like to make a game to kickstart my indie game dev carrer. What tag do you suggest I should focus on as well as give some insight in 
+    which smaller aspects I may look into such as pixel art, top down aspect when making the game. 
+    Provide:
+     1. A concise prediction (2-3 sentences)
+     2. Key factors influencing this trend
+     3. Confidence level (low/medium/high)`;
     const completion = await api.chat.completions.create({
       model: "gpt-4",
       messages: [
