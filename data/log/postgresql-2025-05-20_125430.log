@@ -1,0 +1,64 @@
+2025-05-20 12:54:30 EEST LOG:  database system was shut down at 2025-05-20 09:17:36 EEST
+2025-05-20 12:59:30 EEST LOG:  checkpoint starting: time
+2025-05-20 12:59:30 EEST LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.004 s, total=0.018 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/1BDD218, redo lsn=0/1BDD1C0
+2025-05-20 13:04:06 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-05-20 13:04:06 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-05-20 13:04:06 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-05-20 13:04:30 EEST LOG:  checkpoint starting: time
+2025-05-20 13:04:33 EEST LOG:  checkpoint complete: wrote 24 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.415 s, sync=0.017 s, total=2.444 s; sync files=12, longest=0.002 s, average=0.002 s; distance=119 kB, estimate=119 kB; lsn=0/1BFAF38, redo lsn=0/1BFAEE0
+2025-05-20 15:09:51 EEST ERROR:  syntax error at or near "//" at character 123
+2025-05-20 15:09:51 EEST STATEMENT:  
+	      SELECT DISTINCT month_collected 
+	      FROM steam_game_stats 
+	      ORDER BY month_collected DESC
+	      LIMIT 12;  // Get last 12 months
+	    
+2025-05-20 15:10:02 EEST ERROR:  syntax error at or near "//" at character 123
+2025-05-20 15:10:02 EEST STATEMENT:  
+	      SELECT DISTINCT month_collected 
+	      FROM steam_game_stats 
+	      ORDER BY month_collected DESC
+	      LIMIT 12;  // Get last 12 months
+	    
+2025-05-20 15:10:10 EEST ERROR:  syntax error at or near "//" at character 123
+2025-05-20 15:10:10 EEST STATEMENT:  
+	      SELECT DISTINCT month_collected 
+	      FROM steam_game_stats 
+	      ORDER BY month_collected DESC
+	      LIMIT 12;  // Get last 12 months
+	    
+2025-05-20 15:10:23 EEST ERROR:  syntax error at or near "//" at character 123
+2025-05-20 15:10:23 EEST STATEMENT:  
+	      SELECT DISTINCT month_collected 
+	      FROM steam_game_stats 
+	      ORDER BY month_collected DESC
+	      LIMIT 12;  // Get last 12 months
+	    
+2025-05-20 15:11:06 EEST ERROR:  syntax error at or near "//" at character 123
+2025-05-20 15:11:06 EEST STATEMENT:  
+	      SELECT DISTINCT month_collected 
+	      FROM steam_game_stats 
+	      ORDER BY month_collected DESC
+	      LIMIT 12;  // Get last 12 months
+	    
+2025-05-20 15:11:22 EEST ERROR:  syntax error at or near "//" at character 123
+2025-05-20 15:11:22 EEST STATEMENT:  
+	      SELECT DISTINCT month_collected 
+	      FROM steam_game_stats 
+	      ORDER BY month_collected DESC
+	      LIMIT 12;  // Get last 12 months
+	    
+2025-05-20 15:12:07 EEST ERROR:  syntax error at or near "//" at character 123
+2025-05-20 15:12:07 EEST STATEMENT:  
+	      SELECT DISTINCT month_collected 
+	      FROM steam_game_stats 
+	      ORDER BY month_collected DESC
+	      LIMIT 12;  // Get last 12 months
+	    
+2025-05-20 15:50:37 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-05-20 15:50:37 EEST LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	

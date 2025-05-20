@@ -198,11 +198,8 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
     // Prepare data for AI
     const historicalData = tagGames.map(game => ({
       month: game.month,
-      year: game.year,
       avg_players: game.avg_players,
-      date: game.month_collected.toISOString().split('T')[0]
     }));
-
      const systemPrompt = `You are a data analyst specializing in gaming trends. Analyze the player count data and provide a prediction for the specified tag.`;
     
     // const prompt = `Predict the player count change for games with tag "${tag}" over the next ${months} months. 
@@ -214,14 +211,27 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
     // 3. Key factors influencing this trend
     // 4. Confidence level (low/medium/high)`;
 
-    const prompt = `I would like to make a game to kickstart my indie game dev carrer. What tag do you suggest I should focus on as well as give some insight in 
-    which smaller aspects I may look into such as pixel art, top down aspect when making the game. 
-    Provide:
-     1. A concise prediction (2-3 sentences)
-     2. Key factors influencing this trend
-     3. Confidence level (low/medium/high)`;
+    const prompt = `I would like to make a game to kickstart my indie game dev career.  
+      This is the data I have accumulated (last ${tagGames.length} records):
+
+      \`\`\`json
+      ${JSON.stringify(historicalData, null, 2)}
+      \`\`\`
+      I'm interested in making a game with this tag "${tag}".  
+      Each record shows monthly average player counts for games with this tag.
+      When looking at the games with this tag, what things make them special (referring to art style and other minor elements)?  
+      What do you suggest I should consider when creating my game, given my current circumstances?
+
+      Please provide:
+      1. A concise prediction (3–4 sentences)  
+      2. Key factors explaining the popularity of this tag or its games  
+      3. Confidence level (low / medium / high)
+      `;
+
+
+     //console.log("Sending prompt:\n", prompt);
     const completion = await api.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o",
       messages: [
         {
           role: "system",

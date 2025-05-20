@@ -120,14 +120,6 @@ function renderGamesTable(games, currentTag) {
       <td class="${game.variation >= 0 ? 'positive' : 'negative'}">
         ${game.variation >= 0 ? '+' : ''}${game.variation}%
       </td>
-      <td>
-        <div class="tag-list">
-          ${game.tags
-            .filter(t => t !== currentTag)
-            .map(tag => `<span class="tag-item">${tag}</span>`)
-            .join('') || '<span class="no-tags">No other tags</span>'}
-        </div>
-      </td>
     </tr>
   `).join('');
 }
