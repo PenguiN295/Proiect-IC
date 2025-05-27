@@ -25,6 +25,11 @@ const api = new OpenAI({
   baseURL,
 });
 
+// import { GoogleGenAI } from "@google/genai";
+const {GoogleGenAI} = require("@google/genai");
+
+const ai = new GoogleGenAI({ apiKey: "AIzaSyDfUc3VZ9i-sdfV5hipaxHvki1CcITfUz8" });
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -217,13 +222,14 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
       \`\`\`json
       ${JSON.stringify(historicalData, null, 2)}
       \`\`\`
+      Don't focus too much on the months and more on the games themselves.
       I'm interested in making a game with this tag "${tag}".  
       Each record shows monthly average player counts for games with this tag.
       When looking at the games with this tag, what things make them special (referring to art style and other minor elements, also say the name of the game you are talking about)?  
       What do you suggest I should consider when creating my game, given my current circumstances?
 
       Please provide:
-      1. A concise prediction (3–4 sentences)  
+      1. A concise prediction (3-4 sentences)  
       2. Key factors explaining the popularity of this tag or its games  
 
       Also don't mention which point you are providing( i mean 1 or 2). Make it a continuous explanation thanks.
@@ -231,23 +237,28 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
 
 
      //console.log("Sending prompt:\n", prompt);
-    const completion = await api.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        {
-          role: "system",
-          content: systemPrompt,
-        },
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      temperature: 0.7,
-      max_tokens: 350,
-    });
+    // const completion = await api.chat.completions.create({
+    //   model: "gpt-4o",
+    //   messages: [
+    //     {
+    //       role: "system",
+    //       content: systemPrompt,
+    //     },
+    //     {
+    //       role: "user",
+    //       content: prompt,
+    //     },
+    //   ],
+    //   temperature: 0.7,
+    //   max_tokens: 350,
+    // });
+    const response = await ai.models.generateContent({
+    model: "gemini-2.0-flash",
+    contents: prompt,
+  });
 
-    const prediction = completion.choices[0].message.content;
+    // const prediction = completion.choices[0].message.content;
+    const prediction = response.text;
     res.json({ 
       prediction,
       tag,
