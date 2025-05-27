@@ -219,13 +219,14 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
       \`\`\`
       I'm interested in making a game with this tag "${tag}".  
       Each record shows monthly average player counts for games with this tag.
-      When looking at the games with this tag, what things make them special (referring to art style and other minor elements)?  
+      When looking at the games with this tag, what things make them special (referring to art style and other minor elements, also say the name of the game you are talking about)?  
       What do you suggest I should consider when creating my game, given my current circumstances?
 
       Please provide:
       1. A concise prediction (3–4 sentences)  
       2. Key factors explaining the popularity of this tag or its games  
-      3. Confidence level (low / medium / high)
+
+      Also don't mention which point you are providing( i mean 1 or 2). Make it a continuous explanation thanks.
       `;
 
 
@@ -293,7 +294,6 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-// Graceful shutdown
 process.on('SIGTERM', () => {
   console.log('SIGTERM received. Shutting down gracefully');
   pool.end(() => {

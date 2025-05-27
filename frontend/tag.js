@@ -167,10 +167,10 @@ function setupSearch(games) {
 /**
  * Sets up the sorting functionality
  */
-function setupSorting(games) {
+function setupSorting(games, tag) {
   const sortSelect = document.getElementById('sort');
   let sortedGames = [...games];
-  
+
   sortSelect.addEventListener('change', (e) => {
     const sortValue = e.target.value;
     
@@ -188,7 +188,7 @@ function setupSorting(games) {
         default: return 0;
       }
     });
-    
-    renderGamesTable(sortedGames, urlParams.get('tag'));
+
+    renderGamesTable(sortedGames, tag);
   });
 }
