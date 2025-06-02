@@ -223,14 +223,17 @@ app.get('/api/predict/:tag/:months/:theme', async (req, res) => {
       ${JSON.stringify(historicalData, null, 2)}
       \`\`\`
       Don't focus too much on the months and more on the games themselves.
-      I'm interested in making a game with this tag "${tag}".  
+      I'm interested in making a game with this tag "${tag}".
+      I would like the game's main theme to be "${theme}". Keep in mind i would like to finish the game in ${months} months.  
       Each record shows monthly average player counts for games with this tag.
       When looking at the games with this tag, what things make them special (referring to art style and other minor elements, also say the name of the game you are talking about)?  
-      What do you suggest I should consider when creating my game, given my current circumstances?
+      What do you suggest I should consider when creating my game, given my current circumstances? If you have an idea for a game with these constraints don't hesitate to give it
+      at the end.
 
       Please provide:
       1. A concise prediction (3-4 sentences)  
-      2. Key factors explaining the popularity of this tag or its games  
+      2. Key factors explaining the popularity of this tag or its games
+      3. How do those factors enchance the theme of the game i'm making  
 
       Also don't mention which point you are providing( i mean 1 or 2). Make it a continuous explanation thanks.
       `;
