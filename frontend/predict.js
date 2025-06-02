@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   generateBtn.addEventListener('click', async () => {
     const tag = tagSelect.value;
     const months = document.getElementById('time-select').value;
+    const theme = document.querySelector('input[name="textbox"]').value;
     
     if (!tag) {
       alert('Please select a tag');
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     resultDiv.classList.remove('hidden');
     
     try {
-      const response = await fetch(`http://localhost:3000/api/predict/${tag}/${months}`);
+      const response = await fetch(`http://localhost:3000/api/predict/${tag}/${months}/${theme}`);
       
       if (!response.ok) throw new Error(`Prediction failed: ${response.status}`);
       

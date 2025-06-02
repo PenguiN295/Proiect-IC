@@ -169,8 +169,8 @@ app.get('/api/tags/list', async (req, res) => {
   }
 });
 
-app.get('/api/predict/:tag/:months', async (req, res) => {
-  const { tag, months } = req.params;
+app.get('/api/predict/:tag/:months/:theme', async (req, res) => {
+  const { tag, months, theme } = req.params;
   
   try {
     // Verify the tag exists first
@@ -215,7 +215,7 @@ app.get('/api/predict/:tag/:months', async (req, res) => {
     // 2. Estimated percentage change
     // 3. Key factors influencing this trend
     // 4. Confidence level (low/medium/high)`;
-
+    // console.log(theme);
     const prompt = `I would like to make a game to kickstart my indie game dev career.  
       This is the data I have accumulated (last ${tagGames.length} records):
 
